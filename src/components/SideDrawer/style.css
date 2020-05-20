@@ -1,0 +1,56 @@
+.sideBarContainer{
+    display: flex;
+    flex-direction: row;
+}
+.sideBarContainer .sideBar{
+    position: fixed;
+    width: 70%;
+    max-width: 400px;
+    height: 100%;
+    background-color: white;
+    top:0px;
+    /*opacity: 0.6; */
+    box-shadow: 14px 16px 18px -2px rgba(0,0,0,0.5);
+    z-index: 200;
+}
+
+.sideBarContainer .sideBar h1{
+    width: 100%;
+    text-align: left;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    border-bottom: 2px solid gray;
+    margin-bottom: 20px;
+}
+
+.sideBarContainer .sideBar ul{
+    list-style: none;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+
+.sideBarContainer .sideBar ul li{
+    padding: 10px;
+    font-size: 20px;
+    border-bottom: 1px solid gray;
+}
+
+.sideBarContainer .sideBar ul li a:hover{
+    color: green;
+}
+
+.sideBarContainer .sideBar ul li a{
+    text-decoration: none;
+    width: 100%;
+}
+
+.sideBarContainer .backDrop{
+    width: 100%;
+    height: 100%;
+    top:0px;
+    position: fixed;
+    background: rgba(0,0,0,0.3);
+    z-index: 100;
+}

@@ -1,0 +1,64 @@
+.container{
+    width: 100%;
+    height: 80px;
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .logo{
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    padding: 20px;
+}
+
+.container .itens{
+    display: flex;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.container .itens p{
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.container .itens p:hover{
+    color: white;
+}
+
+.toggleButton{
+    width: 30px;
+    height: 40px;
+    background-color: transparent;
+    margin: 10px;
+    margin-left: 0px;
+}
+
+.toggleButton:hover{
+    cursor: pointer;
+}
+
+.toggleButton .toggleButton__line{
+    background-color: white;
+    height: 3px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+@media(max-width: 600px){
+    .container{
+    height: 70px;
+    }
+
+    .container .logo{
+    font-size: 15px;
+    }
+
+    .container .itens{
+    font-size: 15px;
+    }
+
+}

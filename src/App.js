@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+import Header from './components/Header'
+import SideDrawer from './components/SideDrawer'
+
+import './app.css'
+function App () {
+  const [sideDrawerOpen, setSideDrawerOpen] = useState(false)
+
+  function drawerToggleClickHandler () {
+    setSideDrawerOpen(!sideDrawerOpen)
+  }
+  let sideDrawer
+
+  if (sideDrawerOpen) {
+    sideDrawer = <SideDrawer />
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header drawerClickHandler={drawerToggleClickHandler} />
+      {sideDrawer}
     </div>
   );
 }
