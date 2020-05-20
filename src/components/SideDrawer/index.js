@@ -2,10 +2,14 @@ import React from 'react';
 
 import './style.css'
 
-function SideDrawer () {
+function SideDrawer (props) {
+    let drawerClasse = 'sideBar'
+    if (props.show) {
+        drawerClasse = 'sideBar open'
+    }
     return (
-        <div className="sideBarContainer">
-            <div className="sideBar">
+        <div className={"sideBarContainer"}>
+            <div className={drawerClasse}>
                 <h1>Menu</h1>
                 <ul>
                     <li>
@@ -21,9 +25,6 @@ function SideDrawer () {
                         <a href="/">Logouth</a>
                     </li>
                 </ul>
-            </div>
-            <div className="backDrop">
-                <h1>cade euuu</h1>
             </div>
         </div>
     );

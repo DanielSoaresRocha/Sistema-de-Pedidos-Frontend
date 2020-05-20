@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Header from './components/Header'
 import SideDrawer from './components/SideDrawer'
+import BackDrop from './components/BackDrop'
 
 import './app.css'
 function App () {
@@ -10,15 +11,20 @@ function App () {
   function drawerToggleClickHandler () {
     setSideDrawerOpen(!sideDrawerOpen)
   }
-  let sideDrawer
+
+  function backDropClickHandler () {
+    setSideDrawerOpen(!sideDrawerOpen)
+  }
+  let backDrop
 
   if (sideDrawerOpen) {
-    sideDrawer = <SideDrawer />
+    backDrop = <BackDrop click={backDropClickHandler} />
   }
   return (
     <div className="App">
       <Header drawerClickHandler={drawerToggleClickHandler} />
-      {sideDrawer}
+      <SideDrawer show={sideDrawerOpen} />
+      {backDrop}
     </div>
   );
 }
