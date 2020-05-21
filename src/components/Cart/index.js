@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 
 import './styles.css'
@@ -7,7 +7,7 @@ function Cart (props) {
     return (
         <div className="cart">
             <div className="car">
-                <AiOutlineShoppingCart size={50} color="#FFF" />
+                <AiOutlineShoppingCart color="FFF" />
             </div>
         </div>
     );

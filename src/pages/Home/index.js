@@ -13,13 +13,10 @@ function Home () {
         setSideDrawerOpen(!sideDrawerOpen)
     }
 
-    function backDropClickHandler () {
-        setSideDrawerOpen(!sideDrawerOpen)
-    }
     let backDrop
 
     if (sideDrawerOpen) {
-        backDrop = <BackDrop click={backDropClickHandler} />
+        backDrop = <BackDrop click={drawerToggleClickHandler} />
     }
     return (
         <div className="App">
