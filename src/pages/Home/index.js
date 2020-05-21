@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Header from '../../components/Header'
 import SideDrawer from '../../components/SideDrawer'
 import BackDrop from '../../components/BackDrop'
+import Cart from '../../components/Cart'
 
 import './styles.css'
 function Home () {
@@ -25,6 +26,7 @@ function Home () {
             <Header drawerClickHandler={drawerToggleClickHandler} />
             <SideDrawer show={sideDrawerOpen} />
             {backDrop}
+            <Cart />
         </div>
     );
 }

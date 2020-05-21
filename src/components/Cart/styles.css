@@ -1,0 +1,29 @@
+.cart{
+    position: fixed;
+    background-color: green;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    right: 50px;
+    top: 60px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    cursor: pointer;
+}
+
+.cart:hover{
+    background-color: blue;
+}
+
+.car{
+    margin-top:15px;
+}
+
+@media(max-width:600px){
+    .cart{
+        width: 80px;
+        height: 80px;
+        right: 20px;
+        top: 30px;
+    }
+}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom'
 
 import './styles.css'
 
@@ -6,8 +7,11 @@ function SideDrawer (props) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    const history = useHistory()
+
     function handlerLogon (e) {
         e.preventDefault()
+        history.push('/home')
     }
     return (
         <div className="containerLogon">
@@ -30,7 +34,7 @@ function SideDrawer (props) {
                 <div className="buttons">
                     <button type="submit">Entrar</button>
                     <div className="cadastrar">
-                        <button type="submit">Registrar</button>
+                        <button type="button">Registrar</button>
                     </div>
                 </div>
             </form>
