@@ -1,0 +1,12 @@
+.containerRegister header{
+    display: flex;
+    background-color: khaki;
+    align-items: center;
+    height: 80px;
+}
+
+.containerRegister header .back{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}

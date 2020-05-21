@@ -13,6 +13,7 @@ function SideDrawer (props) {
         e.preventDefault()
         history.push('/home')
     }
+
     return (
         <div className="containerLogon">
             <h1>Sistema de pedidos</h1>
@@ -34,7 +35,7 @@ function SideDrawer (props) {
                 <div className="buttons">
                     <button type="submit">Entrar</button>
                     <div className="cadastrar">
-                        <button type="button">Registrar</button>
+                        <button type="button" onClick={() => history.push('/register')}>Registrar</button>
                     </div>
                 </div>
             </form>
