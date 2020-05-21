@@ -9,7 +9,7 @@ function Header (props) {
         <div className="container">
             <div className="logo">
                 <DrawerToggleButton click={props.drawerClickHandler} />
-                Sistema de produtos
+                Categorias
             </div>
             <div className="itens">
                 <p>Sobre</p>
