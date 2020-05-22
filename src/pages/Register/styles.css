@@ -12,15 +12,35 @@
     cursor: pointer;
 }
 
-
 .containerRegister form{
-    width: 900px;
+    width: 100%;
+    text-align: center;
     margin: auto;
     margin-top: 100px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 60px;
     row-gap: 20px;
+}
+
+.containerRegister form section{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 8px;
+}
+
+.containerRegister form .endereco{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 650px;
+    text-align: left;/*n sei rick*/
+}
+
+.containerRegister form section p{
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: left;
+    margin-left: 45px;
 }
 
 .containerRegister form input{
@@ -30,7 +50,7 @@
     margin: auto;
     border-radius: 8px;
     border-bottom: 2px solid blue;
-    margin-top: 10px;
+    margin-top: 30px;
     margin-bottom: 10px;
 }
 
@@ -51,6 +71,11 @@
 
 .containerRegister form .typePeople .radios input{
     transform: scale(2);
+}
+
+.containerRegister form .typePeople .radios label{
+    font-size: 20px;
+    padding: 10px;
 }
 
 @media(max-width:600px){

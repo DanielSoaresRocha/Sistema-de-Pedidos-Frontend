@@ -9,18 +9,33 @@ import { BsArrowLeftShort } from "react-icons/bs";
 
 function Register () {
     const history = useHistory()
+    const [nome, setNome] = useState('')
+    const [email, setEmail] = useState('')
+
+    const [cepText, setCep] = useState('')
     const [bairro, setBairro] = useState('')
     const [logradouro, setLogradouro] = useState('')
     const [uf, setUf] = useState('')
     const [cidade, setCidade] = useState('')
 
+    const [numero, setNumero] = useState('')
+    const [complemento, setComplemento] = useState('')
+    const [telefone1, setTelefone1] = useState('')
+    const [telefone2, setTelefone2] = useState('')
+    const [telefone3, setTelefone3] = useState('')
+
     async function cepHandle (cepInput) {
-        if (cepInput.length >= 8) {
-            let { data } = await cep.get(`${cepInput}/json/`)
-            setBairro(data.bairro)
-            setLogradouro(data.logradouro)
-            setUf(data.uf)
-            setCidade(data.localidade)
+        try {
+            if (cepInput.length >= 8) {
+                let { data } = await cep.get(`${cepInput}/json/`)
+                setBairro(data.bairro)
+                setLogradouro(data.logradouro)
+                setUf(data.uf)
+                setCidade(data.localidade)
+                setCep(cepInput)
+            }
+        } catch (e) {
+            console.log('deu erro ' + e)
         }
     }
     return (
@@ -34,10 +49,11 @@ function Register () {
 
             <form>
                 <section>
-                    <input placeholder="Nome" />
-                    <input placeholder="Email" type="email" />
+                    <p>Sobre você</p>
+                    <input placeholder="Nome" value={nome} onChange={e => setNome(e.target.value)} />
+                    <input placeholder="Email" type="email" value={email} onChange={e => setEmail(e.target.value)} />
                     <div className="typePeople">
-                        <p>Tipo de pessoa: </p>
+                        <label>Tipo de pessoa: </label>
                         <div className="radios">
                             <input id="fisica" type="radio" value="fisica" name="gender" />
                             <label htmlFor="fisica" value="juridica"> Pessooa física </label>
@@ -46,20 +62,27 @@ function Register () {
                         </div>
                     </div>
                 </section>
+
                 <section>
-                    <input placeholder="Cep" onChange={e => cepHandle(e.target.value)} />
-                    <input placeholder="Logradouro" value={logradouro} disabled="true" />
-                    <input placeholder="Estado" value={uf} disabled="true" />
-                    <input placeholder="Cidade" value={cidade} disabled="true" />
-                    <input placeholder="Bairro" value={bairro} disabled="true" />
+                    <p>Endereço</p>
+                    <div className="endereco">
+                        <input placeholder="Cep" value={cepText} onChange={e => cepHandle(e.target.value)} />
+                        <input placeholder="Logradouro" value={logradouro} disabled={true} />
+                        <input placeholder="Estado" value={uf} disabled={true} />
+                        <input placeholder="Cidade" value={cidade} disabled={true} />
+                        <input placeholder="Bairro" value={bairro} disabled={true} />
+                        <input placeholder="Número" type="number" value={numero} onChange={e => setNumero(e.target.value)} />
+                        <input placeholder="Complemento" value={complemento} onChange={e => setComplemento(e.target.value)} />
+                    </div>
                 </section>
 
                 <section>
-                    <input placeholder="Número" type="number" />
-                    <input placeholder="Complemento" />
-                    <input placeholder="Telefone 1" />
-                    <input placeholder="Telefone 2" />
+                    <p>Contato</p>
+                    <input placeholder="Telefone 1" value={telefone1} onChange={e => setTelefone1(e.target.value)} />
+                    <input placeholder="Telefone 2" value={telefone2} onChange={e => setTelefone2(e.target.value)} />
+                    <input placeholder="Telefone 3" value={telefone3} onChange={e => setTelefone3(e.target.value)} />
                 </section>
+
             </form>
         </div>
     );
