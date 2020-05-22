@@ -26,17 +26,21 @@ function Register () {
 
     async function cepHandle (cepInput) {
         try {
+            setCep(cepInput)
             if (cepInput.length >= 8) {
                 let { data } = await cep.get(`${cepInput}/json/`)
                 setBairro(data.bairro)
                 setLogradouro(data.logradouro)
                 setUf(data.uf)
                 setCidade(data.localidade)
-                setCep(cepInput)
             }
         } catch (e) {
             console.log('deu erro ' + e)
         }
+    }
+
+    function registerHandle (e) {
+        e.preventDefault()
     }
     return (
         <div className="containerRegister">
@@ -47,7 +51,7 @@ function Register () {
                 </div>
             </header>
 
-            <form>
+            <form onSubmit={registerHandle}>
                 <section>
                     <p>Sobre você</p>
                     <input
