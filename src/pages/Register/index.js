@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import cep from '../../services/cep'
 
@@ -9,12 +9,18 @@ import { BsArrowLeftShort } from "react-icons/bs";
 
 function Register () {
     const history = useHistory()
+    const [bairro, setBairro] = useState('')
+    const [logradouro, setLogradouro] = useState('')
+    const [uf, setUf] = useState('')
+    const [cidade, setCidade] = useState('')
 
     async function cepHandle (cepInput) {
         if (cepInput.length >= 8) {
-            console.log(cepInput)
             let { data } = await cep.get(`${cepInput}/json/`)
-            console.log(data)
+            setBairro(data.bairro)
+            setLogradouro(data.logradouro)
+            setUf(data.uf)
+            setCidade(data.localidade)
         }
     }
     return (
@@ -42,15 +48,15 @@ function Register () {
                 </section>
                 <section>
                     <input placeholder="Cep" onChange={e => cepHandle(e.target.value)} />
-                    <input placeholder="Logradouro" />
-                    <input placeholder="Número" type="number" />
-                    <input placeholder="Complemento" />
-                    <input placeholder="Bairro" />
+                    <input placeholder="Logradouro" value={logradouro} disabled="true" />
+                    <input placeholder="Estado" value={uf} disabled="true" />
+                    <input placeholder="Cidade" value={cidade} disabled="true" />
+                    <input placeholder="Bairro" value={bairro} disabled="true" />
                 </section>
 
                 <section>
-                    <input placeholder="Estado" />
-                    <input placeholder="Cidade" />
+                    <input placeholder="Número" type="number" />
+                    <input placeholder="Complemento" />
                     <input placeholder="Telefone 1" />
                     <input placeholder="Telefone 2" />
                 </section>
