@@ -50,15 +50,45 @@ function Register () {
             <form>
                 <section>
                     <p>Sobre você</p>
-                    <input placeholder="Nome" value={nome} onChange={e => setNome(e.target.value)} />
-                    <input placeholder="Email" type="email" value={email} onChange={e => setEmail(e.target.value)} />
+                    <input
+                        placeholder="Nome"
+                        value={nome}
+                        onChange={e => setNome(e.target.value)}
+                        required={true}
+                    />
+                    <input
+                        placeholder="Email"
+                        type="email"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        required={true}
+                    />
                     <div className="typePeople">
                         <label>Tipo de pessoa: </label>
                         <div className="radios">
-                            <input id="fisica" type="radio" value="fisica" name="gender" />
-                            <label htmlFor="fisica" value="juridica"> Pessooa física </label>
-                            <input id="juridica" type="radio" value="juridica" name="gender" />
-                            <label htmlFor="juridica" value="juridica"> Pessoa jurídica</label>
+                            <input
+                                id="fisica"
+                                type="radio"
+                                value="fisica"
+                                name="gender"
+                                required={true}
+                            />
+                            <label
+                                htmlFor="fisica"
+                                value="juridica">
+                                Pessooa física
+                            </label>
+                            <input
+                                id="juridica"
+                                type="radio"
+                                value="juridica"
+                                name="gender"
+                                required={true}
+                            />
+                            <label
+                                htmlFor="juridica"
+                                value="juridica">
+                                Pessoa jurídica</label>
                         </div>
                     </div>
                 </section>
@@ -66,23 +96,64 @@ function Register () {
                 <section>
                     <p>Endereço</p>
                     <div className="endereco">
-                        <input placeholder="Cep" value={cepText} onChange={e => cepHandle(e.target.value)} />
-                        <input placeholder="Logradouro" value={logradouro} disabled={true} />
-                        <input placeholder="Estado" value={uf} disabled={true} />
-                        <input placeholder="Cidade" value={cidade} disabled={true} />
-                        <input placeholder="Bairro" value={bairro} disabled={true} />
-                        <input placeholder="Número" type="number" value={numero} onChange={e => setNumero(e.target.value)} />
-                        <input placeholder="Complemento" value={complemento} onChange={e => setComplemento(e.target.value)} />
+                        <input
+                            placeholder="Cep"
+                            value={cepText}
+                            onChange={e => cepHandle(e.target.value)}
+                            required={true}
+                        />
+                        <input
+                            placeholder="Número"
+                            type="number"
+                            value={numero}
+                            onChange={e => setNumero(e.target.value)}
+                            required={true}
+                        />
+                        <input
+                            placeholder="Complemento"
+                            value={complemento}
+                            onChange={e => setComplemento(e.target.value)}
+                            required={true}
+                        />
+                        <input
+                            placeholder="Logradouro"
+                            value={logradouro}
+                            disabled={true} />
+                        <input
+                            placeholder="Estado"
+                            value={uf}
+                            disabled={true} />
+                        <input
+                            placeholder="Cidade"
+                            value={cidade}
+                            disabled={true} />
+                        <input
+                            placeholder="Bairro"
+                            value={bairro}
+                            disabled={true} />
+
                     </div>
                 </section>
 
                 <section>
                     <p>Contato</p>
-                    <input placeholder="Telefone 1" value={telefone1} onChange={e => setTelefone1(e.target.value)} />
-                    <input placeholder="Telefone 2" value={telefone2} onChange={e => setTelefone2(e.target.value)} />
-                    <input placeholder="Telefone 3" value={telefone3} onChange={e => setTelefone3(e.target.value)} />
+                    <input
+                        placeholder="Telefone 1"
+                        value={telefone1}
+                        onChange={e => setTelefone1(e.target.value)} />
+                    <input
+                        placeholder="Telefone 2"
+                        value={telefone2}
+                        onChange={e => setTelefone2(e.target.value)} />
+                    <input
+                        placeholder="Telefone 3"
+                        value={telefone3}
+                        onChange={e => setTelefone3(e.target.value)} />
                 </section>
 
+                <div className="buttonContainer">
+                    <button type="submit">Cadastrar</button>
+                </div>
             </form>
         </div>
     );

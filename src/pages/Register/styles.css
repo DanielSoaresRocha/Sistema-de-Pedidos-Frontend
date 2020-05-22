@@ -23,7 +23,8 @@
 }
 
 .containerRegister form section{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: whitesmoke;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
     margin-left: 5px;
     margin-right: 5px;
     border-radius: 8px;
@@ -40,7 +41,7 @@
     font-size: 30px;
     margin-bottom: 20px;
     text-align: left;
-    margin-left: 45px;
+    margin-left: 30px;
 }
 
 .containerRegister form input{
@@ -77,6 +78,19 @@
     font-size: 20px;
     padding: 10px;
 }
+.containerRegister form .buttonContainer{
+    width: 100%;
+    grid-column: 2;
+}
+.containerRegister form .buttonContainer button{
+    width: 300px;
+    font-size: 30px;
+    background-color: blue;
+    color: white;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+}
 
 @media(max-width:600px){
     .containerRegister header{
@@ -85,5 +99,41 @@
 
     .containerRegister header .back h1{
         font-size: 25px;
+    }
+
+    .containerRegister form{
+        display: block;
+    }
+
+    .containerRegister form section{
+        margin-bottom: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .containerRegister form section .endereco{
+        grid-template-columns: 1fr;
+        width: 100%;
+        text-align: left;/*n sei rick*/
+    }
+    
+    .containerRegister form section p{
+        font-size: 25px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+    }
+
+    .containerRegister form input{
+        font-size: 20px;
+    }
+
+    .containerRegister form section .typePeople label{
+        font-size: 25px;
+    }
+
+    .containerRegister form .buttonContainer button{
+        width: 200px;
+        font-size: 25px;
+        padding: 10px;
     }
 }
