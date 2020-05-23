@@ -20,9 +20,31 @@
     border-bottom: 2px solid gray;
     margin-left: 5px;
     width: 100%;
+    margin-left: 10px;
 }
 
 .containerCategory .nameCategory p{
     margin-top: 30px;
-    margin-left: 20px;
+}
+
+@media(max-width: 600px){
+    .containerCategory{
+        padding: 0px;
+        display: flex;
+        width: 90%;
+        margin: auto;
+        margin-bottom: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .containerCategory img{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
+
+    .containerCategory .nameCategory{
+        width: 65%;
+    }
 }
