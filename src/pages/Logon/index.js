@@ -11,7 +11,7 @@ function SideDrawer (props) {
 
     function handlerLogon (e) {
         e.preventDefault()
-        history.push('/home')
+        history.push('/categories')
     }
 
     return (
