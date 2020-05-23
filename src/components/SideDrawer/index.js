@@ -13,7 +13,7 @@ function SideDrawer (props) {
                 <h1>Menu</h1>
                 <ul>
                     <li>
-                        <a href="/">Profile</a>
+                        <a href="/profile">Profile</a>
                     </li>
                     <li>
                         <a href="/">Categorias</a>

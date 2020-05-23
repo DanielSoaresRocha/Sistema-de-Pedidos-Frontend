@@ -5,7 +5,7 @@ import './styles.css'
 
 function Cart (props) {
     return (
-        <div className="cart">
+        <div className="cart" onClick={props.click}>
             <div className="car">
                 <AiOutlineShoppingCart color="FFF" />
             </div>

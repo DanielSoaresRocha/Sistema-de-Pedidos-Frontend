@@ -3,10 +3,9 @@ import React, { useState } from 'react';
 import Header from '../../components/Header'
 import SideDrawer from '../../components/SideDrawer'
 import BackDrop from '../../components/BackDrop'
-import Cart from '../../components/Cart'
 
 import './styles.css'
-function Home () {
+function Home (props) {
     const [sideDrawerOpen, setSideDrawerOpen] = useState(false)
 
     function drawerToggleClickHandler () {
@@ -23,7 +22,7 @@ function Home () {
             <Header drawerClickHandler={drawerToggleClickHandler} />
             <SideDrawer show={sideDrawerOpen} />
             {backDrop}
-            <Cart />
+            {props.children}
         </div>
     );
 }

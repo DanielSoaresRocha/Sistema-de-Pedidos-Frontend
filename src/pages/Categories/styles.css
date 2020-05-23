@@ -1,0 +1,11 @@
+.listCategories{
+    width: 100%;
+    padding-top: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 20px;
+    width: 900px;
+    margin-left: 20px;
+    
+}
