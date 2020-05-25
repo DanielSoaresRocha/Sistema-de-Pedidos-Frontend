@@ -11,10 +11,6 @@ function Header (props) {
                 <DrawerToggleButton click={props.drawerClickHandler} />
                 Categorias
             </div>
-            <div className="itens">
-                <p>Sobre</p>
-                <p>Outro</p>
-            </div>
         </div>
     );
 }

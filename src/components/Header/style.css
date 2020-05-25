@@ -5,6 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;/*TIRAR SCROLL*/   
 }
 
 .container .logo{
@@ -12,21 +13,6 @@
     align-items: center;
     font-size: 30px;
     padding: 20px;
-}
-
-.container .itens{
-    display: flex;
-    font-size: 20px;
-    padding: 20px;
-}
-
-.container .itens p{
-    padding-left: 20px;
-    cursor: pointer;
-}
-
-.container .itens p:hover{
-    color: white;
 }
 
 .toggleButton{
@@ -54,11 +40,7 @@
     }
 
     .container .logo{
-    font-size: 15px;
-    }
-
-    .container .itens{
-    font-size: 15px;
+    font-size: 30px;
     }
 
 }
