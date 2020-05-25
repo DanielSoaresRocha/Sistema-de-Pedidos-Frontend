@@ -19,7 +19,6 @@
 
 .sideBarContainer .sideBar.open{
     transform: translateX(0);
-
 }
 
 .sideBarContainer .sideBar h1{
