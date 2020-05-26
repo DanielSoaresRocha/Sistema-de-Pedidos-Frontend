@@ -6,9 +6,6 @@ import './styles.css'
 
 import HeaderNavigate from '../../components/HeaderNavigate'
 
-import { BsArrowLeftShort } from "react-icons/bs";
-
-
 function Register () {
     const history = useHistory()
     const [nome, setNome] = useState('')

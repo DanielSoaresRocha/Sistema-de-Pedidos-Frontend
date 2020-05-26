@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom'
+
 import api from '../../services/api'
 
 import './styles.css'
@@ -9,6 +11,7 @@ import Category from '../../components/Category'
 
 function Categories () {
     const [categories, setCategories] = useState([])
+    const history = useHistory()
 
     useEffect(() => {
         api.get('/categorias').then(response => {
@@ -18,8 +21,7 @@ function Categories () {
     }, [])
 
     async function productsHandle (id) {
-        let { data } = await api.get(`/produtos?categorias=${id}`)
-        console.log(data)
+        history.push(`/products/${id}`)
     }
 
     return (
