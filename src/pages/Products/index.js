@@ -4,6 +4,7 @@ import { useHistory, useParams } from 'react-router-dom'
 import api from '../../services/api'
 
 import HeaderNavigate from '../../components/HeaderNavigate'
+import Category from '../../components/Category'
 
 import './styles.css'
 
@@ -19,12 +20,15 @@ function Products () {
     }, [id])
 
     return (
-        <>
-            <HeaderNavigate name={"Categorias"} navigate={() => history.push(`/categories`)} />
-            {products.map(product => (
-                <h1 key={product.id}>{product.nome}</h1>
-            ))}
-        </>
+        <HeaderNavigate name={"Categorias"} navigate={() => history.push(`/categories`)}>
+            <div className="productsContainer">
+                <div className="listProducts">
+                    {products.map(product => (
+                        <Category key={product.id} name={product.nome} />
+                    ))}
+                </div>
+            </div>
+        </HeaderNavigate>
     );
 }
 

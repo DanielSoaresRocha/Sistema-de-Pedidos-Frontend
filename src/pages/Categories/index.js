@@ -29,7 +29,7 @@ function Categories () {
             <LittleCart />
             <div className="listCategories">
                 {categories.map(category => (
-                    <Category click={() => productsHandle(category.id)} key={category.id} nameCategory={category.nome} />
+                    <Category click={() => productsHandle(category.id)} key={category.id} name={category.nome} />
                 ))}
             </div>
         </Home>

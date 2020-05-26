@@ -1,0 +1,15 @@
+.productsContainer {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding-top: 5%;
+}
+
+.productsContainer .listProducts{
+    display: grid;
+    width: 1200px;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 60px;
+    margin: auto;
+    padding: 20px;
+}

@@ -8,7 +8,7 @@ function Category (props) {
         <div className="containerCategory" onClick={props.click}>
             <img src="https://www.euax.com.br/wp-content/uploads/2019/04/escopo-de-projeto.png" alt="categoria" />
             <div className="nameCategory">
-                <p>{props.nameCategory}</p>
+                <p>{props.name}</p>
             </div>
         </div>
     );
