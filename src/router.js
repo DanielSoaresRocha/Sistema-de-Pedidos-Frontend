@@ -19,7 +19,7 @@ export default function Routes () {
                 <Route path="/profile" component={Profile} />
                 <Route path="/categories" component={Caregories} />
                 <Route path="/products/:id" component={Products} />
-                <Route path="/product-detail" exact component={ProductDetail} />
+                <Route path="/product-detail/:id" exact component={ProductDetail} />
             </Switch>
         </BrowserRouter>
     )

@@ -19,12 +19,16 @@ function Products () {
         })
     }, [id])
 
+    function productDetailHandle (product) {
+        history.push(`/product-detail/${product.id}`)
+    }
+
     return (
         <HeaderNavigate name={"Produtos"} navigate={() => history.push(`/categories`)}>
             <div className="productsContainer">
                 <div className="listProducts">
                     {products.map(product => (
-                        <Category key={product.id} name={product.nome} />
+                        <Category click={() => productDetailHandle(product)} key={product.id} name={product.nome} />
                     ))}
                 </div>
             </div>
