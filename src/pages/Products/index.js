@@ -20,7 +20,7 @@ function Products () {
     }, [id])
 
     return (
-        <HeaderNavigate name={"Categorias"} navigate={() => history.push(`/categories`)}>
+        <HeaderNavigate name={"Produtos"} navigate={() => history.push(`/categories`)}>
             <div className="productsContainer">
                 <div className="listProducts">
                     {products.map(product => (

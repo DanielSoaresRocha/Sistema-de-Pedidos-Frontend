@@ -1,12 +1,11 @@
 .listCategories{
-    width: 100%;
+    width: 1300px;
     padding-top: 5%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 30px;
+    column-gap: 50px;
     row-gap: 20px;
-    width: 900px;
-    margin-left: 20px;
+    margin: auto;
 }
 
 @media(max-width:600px){

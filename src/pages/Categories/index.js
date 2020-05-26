@@ -16,7 +16,6 @@ function Categories () {
     useEffect(() => {
         api.get('/categorias').then(response => {
             setCategories(response.data)
-            console.log(`----------------${response.data[0].nome}`)
         })
     }, [])
 

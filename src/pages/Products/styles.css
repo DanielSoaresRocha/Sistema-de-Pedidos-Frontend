@@ -6,10 +6,21 @@
 }
 
 .productsContainer .listProducts{
-    display: grid;
     width: 1200px;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 60px;
     margin: auto;
     padding: 20px;
+}
+
+
+@media(max-width:600px){
+    .productsContainer .listProducts{
+        width: 100%;
+        padding-top: 5%;
+        display: block;
+        margin-left: 0px;
+        padding: 0px;
+    }
 }
