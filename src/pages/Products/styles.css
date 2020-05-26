@@ -13,7 +13,7 @@
     margin: auto;
     padding: 20px;
 }
-/* diminuindo tamanho do componente */
+/* apenas para aprendizado: diminuindo tamanho do componente com > */
 .productsContainer .listProducts > div > div{
     max-height: 50px;
 }
@@ -37,4 +37,18 @@
         margin-left: 0px;
         padding: 0px;
     }
+    /*  apenas para aprendizado: voltando ao original */
+    .productsContainer .listProducts > div > div{
+        max-height: 100px;
+    }
+
+    .productsContainer .listProducts > div > div > p{
+        margin-top: 30px;
+    }
+
+    .productsContainer .listProducts > div > img{
+        width: 80px;
+        height: 80px;
+    }
+
 }
