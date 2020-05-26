@@ -3,7 +3,7 @@ import api from '../../services/api'
 
 import './styles.css'
 
-import Cart from '../../components/Cart'
+import LittleCart from '../../components/LittleCart'
 import Home from '../Home'
 import Category from '../../components/Category'
 
@@ -17,12 +17,17 @@ function Categories () {
         })
     }, [])
 
+    async function productsHandle (id) {
+        let { data } = await api.get(`/produtos?categorias=${id}`)
+        console.log(data)
+    }
+
     return (
         <Home>
-            <Cart />
+            <LittleCart />
             <div className="listCategories">
                 {categories.map(category => (
-                    <Category key={category.id} nameCategory={category.nome} />
+                    <Category click={() => productsHandle(category.id)} key={category.id} nameCategory={category.nome} />
                 ))}
             </div>
         </Home>

@@ -6,6 +6,7 @@ import Logon from './pages/Logon'
 import Home from './pages/Home'
 import Register from './pages/Register'
 import Profile from './pages/Profile'
+import Cart from './pages/Cart'
 
 export default function Routes () {
     return (
@@ -16,6 +17,7 @@ export default function Routes () {
                 <Route path="/register" component={Register} />
                 <Route path="/profile" component={Profile} />
                 <Route path="/categories" component={Caregories} />
+                <Route path="/cart" component={Cart} />
             </Switch>
         </BrowserRouter>
     )

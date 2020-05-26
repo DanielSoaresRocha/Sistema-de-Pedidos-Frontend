@@ -4,6 +4,8 @@ import cep from '../../services/cep'
 
 import './styles.css'
 
+import HeaderNavigate from '../../components/HeaderNavigate'
+
 import { BsArrowLeftShort } from "react-icons/bs";
 
 
@@ -44,13 +46,7 @@ function Register () {
     }
     return (
         <div className="containerRegister">
-            <header>
-                <div className="back" onClick={() => history.push('/')}>
-                    <BsArrowLeftShort size={50} color="000" />
-                    <h1>SingUp</h1>
-                </div>
-            </header>
-
+            <HeaderNavigate name={"SingUp"} navigate={() => history.push('/')} />
             <form onSubmit={registerHandle}>
                 <section>
                     <p>Sobre você</p>

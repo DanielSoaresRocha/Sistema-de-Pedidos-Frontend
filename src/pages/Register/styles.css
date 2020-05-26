@@ -1,7 +1,7 @@
 .containerRegister{
     overflow: hidden;/*TIRAR SCROLL*/   
 }
-
+/*
 .containerRegister header{
     display: flex;
     background-color: blue;
@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-}
+}*/
 
 .containerRegister form{
     width: 100%;
