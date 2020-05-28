@@ -6,7 +6,7 @@ import api from '../../services/api'
 import './styles.css'
 
 import LittleCart from '../../components/LittleCart'
-import Home from '../Home'
+import Home from '../../components/Home'
 import Category from '../../components/Category'
 
 function Categories () {
@@ -24,7 +24,7 @@ function Categories () {
     }
 
     return (
-        <Home>
+        <Home name={'Categorias'}>
             <LittleCart />
             <div className="listCategories">
                 {categories.map(category => (

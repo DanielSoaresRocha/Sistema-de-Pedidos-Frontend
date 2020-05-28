@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import Header from '../../components/Header'
-import SideDrawer from '../../components/SideDrawer'
-import BackDrop from '../../components/BackDrop'
+import Header from '../Header'
+import SideDrawer from '../SideDrawer'
+import BackDrop from '../BackDrop'
 
 import './styles.css'
 function Home (props) {
@@ -19,7 +19,7 @@ function Home (props) {
     }
     return (
         <div className="App">
-            <Header drawerClickHandler={drawerToggleClickHandler} />
+            <Header drawerClickHandler={drawerToggleClickHandler} name={props.name} />
             <SideDrawer show={sideDrawerOpen} />
             {backDrop}
             {props.children}
