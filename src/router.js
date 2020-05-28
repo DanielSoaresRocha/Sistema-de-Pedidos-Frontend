@@ -7,6 +7,7 @@ import Register from './pages/Register'
 import Profile from './pages/Profile'
 import Products from './pages/Products'
 import ProductDetail from './pages/ProductDetail'
+import Cart from './pages/Cart'
 
 export default function Routes () {
     return (
@@ -17,7 +18,8 @@ export default function Routes () {
                 <Route path="/profile" component={Profile} />
                 <Route path="/categories" component={Caregories} />
                 <Route path="/products/:id" component={Products} />
-                <Route path="/product-detail/:id" exact component={ProductDetail} />
+                <Route path="/product-detail/:id" component={ProductDetail} />
+                <Route path="/cart" component={Cart} />
             </Switch>
         </BrowserRouter>
     )

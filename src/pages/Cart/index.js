@@ -3,12 +3,12 @@ import React from 'react';
 import './styles.css'
 import Home from '../../components/Home'
 
-function Profile () {
+function Cart () {
     return (
-        <Home>
+        <Home name={'Cart'}>
             Perfild
         </Home>
     );
 }
 
-export default Profile;
+export default Cart;

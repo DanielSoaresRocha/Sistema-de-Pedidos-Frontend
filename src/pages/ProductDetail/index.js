@@ -24,7 +24,7 @@ function ProductDetail () {
     }
     return (
         <HeaderNavigate name={"Detalhes"} navigate={() => history.goBack()}>
-            <LittleCart />
+            <LittleCart click={() => history.push('/cart')} />
             <div className="detailContainer">
                 <div className="card">
                     <img src={"https://blog.hotmart.com/blog/2019/12/17163328/cadastrar_produto-670x419.png"} alt={"Foto do produto"} />

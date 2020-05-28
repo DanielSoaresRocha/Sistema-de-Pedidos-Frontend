@@ -19,13 +19,13 @@ function Categories () {
         })
     }, [])
 
-    async function productsHandle (id) {
+    function productsHandle (id) {
         history.push(`/products/${id}`)
     }
 
     return (
         <Home name={'Categorias'}>
-            <LittleCart />
+            <LittleCart click={() => history.push('/cart')} />
             <div className="listCategories">
                 {categories.map(category => (
                     <Category click={() => productsHandle(category.id)} key={category.id} name={category.nome} />
