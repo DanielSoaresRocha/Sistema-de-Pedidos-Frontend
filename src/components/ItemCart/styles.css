@@ -1,0 +1,66 @@
+.productCart{
+    display: flex;
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+    border-radius: 8px;
+    padding-left: 20px;
+    align-items: center;
+}
+
+.productCart img{
+    width: 100px;
+    height: 100px;
+}
+
+.productCart .information{
+    margin-left: 15px;
+    width: 40%;
+    text-align: left;
+}
+.productCart .information p:nth-child(1){
+    font-size: 25px;
+}
+
+.productCart .information p:nth-child(2){
+    font-size: 20px;
+}
+
+.productCart .information .modifyQtd{
+    display: flex;
+    text-align: center;
+    padding-top: 10px;
+    padding-bot: 10px;
+    align-items: center;
+}
+.productCart .information .modifyQtd p{
+    margin-right: 10px;
+    margin-left: 0px;
+}
+
+.productCart .information .modifyQtd p:nth-child(1){
+    background-color: red;
+    border-radius: 50%;
+    padding: 3px;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    width: 20px;
+}
+
+
+.productCart .information .modifyQtd p:nth-child(3){
+    background-color: green;
+    border-radius: 50%;
+    padding: 3px;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    width: 20px;
+}
+
+.productCart .trash{
+    font-size: 50px;
+    margin-left: 20px;
+    margin-top: 45px;
+    margin-bottom: 50px;
+    cursor: pointer;
+}

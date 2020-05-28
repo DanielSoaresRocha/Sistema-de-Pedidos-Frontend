@@ -1,0 +1,17 @@
+.containerCart{
+    padding: 3%;
+}
+.containerCart ul{
+    padding: 20px;
+    height: 450px;
+    width: 750px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 30px;
+    /*novo aprendizado*/
+    overflow: scroll;
+}
+.containerCart ul li{
+    list-style: none;
+}
