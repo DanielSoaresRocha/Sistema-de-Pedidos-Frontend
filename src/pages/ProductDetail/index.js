@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom'
 import api from '../../services/api'
+import cart from '../../data/cart'
 
 import HeaderNavigate from '../../components/HeaderNavigate'
 import LittleCart from '../../components/LittleCart'
@@ -16,7 +17,11 @@ function ProductDetail () {
         api.get(`/produtos/${id}`).then(response => {
             setProduct(response.data)
         })
-    }, [])
+    }, [id])
+
+    function addToCarHandle () {
+        cart.addToCart(product)
+    }
     return (
         <HeaderNavigate name={"Detalhes"} navigate={() => history.goBack()}>
             <LittleCart />
@@ -26,7 +31,7 @@ function ProductDetail () {
                     <div className="information">
                         <p>{product.nome}</p>
                         <p>{`R$ ${product.preco}.00`}</p>
-                        <button>Adicionar ao carrinho</button>
+                        <button onClick={addToCarHandle}>Adicionar ao carrinho</button>
                     </div>
                 </div>
             </div>
