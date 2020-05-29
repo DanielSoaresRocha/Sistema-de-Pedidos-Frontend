@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom'
 
 import ItemCart from '../../components/ItemCart'
 import cart from '../../data/cart'
@@ -8,6 +9,7 @@ import Home from '../../components/Home'
 
 function Cart () {
     let [cartItens, setCartItens] = useState([])
+    const history = useHistory()
 
     useEffect(() => {
         setCartItens(cart.getCart)
@@ -19,7 +21,7 @@ function Cart () {
     }
 
     function removeItem (item) {
-        cart.removeProduct(item)
+        cart.removeItem(item)
         setCartItens(cart.getCart)
     }
 
@@ -41,7 +43,7 @@ function Cart () {
                 </ul>
                 <div className="total">
                     <p>{`Total: ${cart.getTotalCart()}.00 R$`}</p>
-                    <button>Continuar comprando</button>
+                    <button onClick={() => history.push('/categories')}>Continuar comprando</button>
                 </div>
             </div>
         </Home>

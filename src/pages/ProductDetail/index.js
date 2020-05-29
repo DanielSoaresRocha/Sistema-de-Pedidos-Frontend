@@ -21,6 +21,7 @@ function ProductDetail () {
 
     function addToCarHandle () {
         cart.addToCart(product)
+        history.push('/cart')
     }
     return (
         <HeaderNavigate name={"Detalhes"} navigate={() => history.goBack()}>

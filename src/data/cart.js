@@ -18,7 +18,7 @@ const addToCart = (product) => {
     console.log(JSON.parse(localStorage.getItem('cart')))
 }
 
-const removeProduct = (product) => {
+const removeItem = (product) => {
     let cart = getCart().map(item => {// retirar 1 item do carrinho
         if (item.id === product.id) {
             item.qtd--
@@ -48,4 +48,4 @@ const getTotalCart = () => {
     return total
 }
 
-export default { addToCart, getCart, getTotalCart, removeProduct }
+export default { addToCart, getCart, getTotalCart, removeItem }
