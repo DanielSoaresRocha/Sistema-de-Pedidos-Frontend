@@ -15,7 +15,11 @@ const addToCart = (product) => {
         cart.push(product)// adiciona novo produto
 
     localStorage.setItem('cart', JSON.stringify(cart))
-    console.log(JSON.parse(localStorage.getItem('cart')))
+}
+
+const removeProduct = (product) => {
+    let cart = getCart().filter(item => item.id !== product.id)
+    localStorage.setItem('cart', JSON.stringify(cart))
 }
 
 const removeItem = (product) => {
@@ -48,4 +52,4 @@ const getTotalCart = () => {
     return total
 }
 
-export default { addToCart, getCart, getTotalCart, removeItem }
+export default { addToCart, getCart, getTotalCart, removeItem, removeProduct }

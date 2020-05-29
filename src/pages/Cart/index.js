@@ -25,6 +25,11 @@ function Cart () {
         setCartItens(cart.getCart)
     }
 
+    function removeProduct (item) {
+        cart.removeProduct(item)
+        setCartItens(cart.getCart)
+    }
+
     return (
         <Home name={'Cart'}>
             <div className="containerCart">
@@ -36,7 +41,8 @@ function Cart () {
                                 price={item.preco}
                                 qtd={item.qtd}
                                 addClick={() => addItem(item)}
-                                removeClick={() => removeItem(item)}
+                                removeItemClick={() => removeItem(item)}
+                                removeProductClick={() => removeProduct(item)}
                             />
                         </li>
                     ))}

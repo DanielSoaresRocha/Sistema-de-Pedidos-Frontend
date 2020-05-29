@@ -55,11 +55,16 @@
 }
 
 @media(max-width:800px){
+    .containerCart{
+        max-height: 500px;
+        overflow: hidden;
+    }
     .containerCart ul{
         display: grid;
         grid-template-columns: 1fr;
         row-gap: 10px;
         height: 350px;
+        padding: 10px;
     }
 
     .containerCart .total p{

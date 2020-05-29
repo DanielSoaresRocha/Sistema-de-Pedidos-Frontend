@@ -14,14 +14,14 @@ function ItemCart (props) {
                 <p>{props.name}</p>
                 <p>{props.price}</p>
                 <div className="modifyQtd">
-                    <p onClick={props.removeClick}>-</p>
+                    <p onClick={props.removeItemClick}>-</p>
                     <p>{props.qtd}</p>
                     <p onClick={props.addClick}>+</p>
                 </div>
             </div>
             <div className="trash">
-                <div className="icon">
-                    <FaTrash />
+                <div className="icon" onClick={props.removeProductClick}>
+                    <FaTrash color={'red'} />
                 </div>
             </div>
         </div>
