@@ -1,5 +1,6 @@
 .containerCart{
     padding: 3%;
+    display: flex;
 }
 .containerCart ul{
     padding: 20px;
@@ -12,6 +13,70 @@
     /*novo aprendizado*/
     overflow: scroll;
 }
+
 .containerCart ul li{
     list-style: none;
+}
+
+.containerCart .total p{
+    font-size: 50px;
+    padding-top: 30px;
+    margin-left: 20px;
+}
+
+.containerCart .total{
+    height: 500px;
+}
+
+.containerCart .total button{
+    margin-top: 100px;
+    font-size: 30px;
+    border: 1px solid blue;
+    padding: 10px;
+    cursor: pointer;
+    color: blue;
+}
+
+.containerCart .total button:hover{
+    background-color: rgb(27, 177, 223);
+    color: white;
+}
+
+@media(max-width: 1000px){
+    .containerCart{
+        padding: 0%;
+        display: block;
+    }
+
+    .containerCart ul{
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media(max-width:800px){
+    .containerCart ul{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .containerCart .total p{
+        font-size: 30px;
+        padding-top: 30px;
+        margin-left: 20px;
+    }
+    .containerCart .total{
+        box-sizing: border-box;
+    }
+
+    .containerCart .total button{
+        margin-top: 30px;
+        width: 95%;
+        margin-left: 2.5%;
+        font-size: 25px;
+        border: 1px solid blue;
+        padding: 10px;
+        cursor: pointer;
+        color: blue;
+    }
 }

@@ -40,7 +40,7 @@ function SideDrawer (props) {
             li.style.animationDelay = `${randon(0.1, 5)}`
             ulSquares.appendChild(li)
         }
-        await sleep(10 * 1000)
+        await sleep(15 * 1000)
         effectLogon()
     }
     useEffect(() => {

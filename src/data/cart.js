@@ -27,4 +27,14 @@ const getCart = () => {
     }
 }
 
-export default { addToCart, getCart }
+const getTotalCart = () => {
+    let total = 0
+    getCart().map(item => {
+        total = total + (item.preco * item.qtd)
+        return 0
+    })
+
+    return total
+}
+
+export default { addToCart, getCart, getTotalCart }

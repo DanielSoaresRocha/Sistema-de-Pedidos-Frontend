@@ -20,6 +20,10 @@ function Cart () {
                         <li key={item.id}><ItemCart name={item.nome} price={item.preco} qtd={item.qtd} /></li>
                     ))}
                 </ul>
+                <div className="total">
+                    <p>{`Total: ${cart.getTotalCart()}.00 R$`}</p>
+                    <button>Continuar comprando</button>
+                </div>
             </div>
         </Home>
     );
