@@ -18,6 +18,17 @@ const addToCart = (product) => {
     console.log(JSON.parse(localStorage.getItem('cart')))
 }
 
+const removeProduct = (product) => {
+    let cart = getCart().map(item => {// retirar 1 item do carrinho
+        if (item.id === product.id) {
+            item.qtd--
+        }
+        return item
+    })
+    cart = cart.filter(item => item.qtd > 0)// se tiver algum com quantidade maior que zero irá remover
+    localStorage.setItem('cart', JSON.stringify(cart))
+}
+
 const getCart = () => {
     const cart = localStorage.getItem('cart')
     if (cart) {
@@ -37,4 +48,4 @@ const getTotalCart = () => {
     return total
 }
 
-export default { addToCart, getCart, getTotalCart }
+export default { addToCart, getCart, getTotalCart, removeProduct }

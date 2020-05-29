@@ -14,9 +14,9 @@ function ItemCart (props) {
                 <p>{props.name}</p>
                 <p>{props.price}</p>
                 <div className="modifyQtd">
-                    <p>-</p>
+                    <p onClick={props.removeClick}>-</p>
                     <p>{props.qtd}</p>
-                    <p>+</p>
+                    <p onClick={props.addClick}>+</p>
                 </div>
             </div>
             <div className="trash">

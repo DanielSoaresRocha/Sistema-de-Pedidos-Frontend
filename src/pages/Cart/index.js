@@ -12,12 +12,31 @@ function Cart () {
     useEffect(() => {
         setCartItens(cart.getCart)
     }, [])
+
+    function addItem (item) {
+        cart.addToCart(item)
+        setCartItens(cart.getCart)
+    }
+
+    function removeItem (item) {
+        cart.removeProduct(item)
+        setCartItens(cart.getCart)
+    }
+
     return (
         <Home name={'Cart'}>
             <div className="containerCart">
                 <ul>
                     {cartItens.map(item => (
-                        <li key={item.id}><ItemCart name={item.nome} price={item.preco} qtd={item.qtd} /></li>
+                        <li key={item.id}>
+                            <ItemCart
+                                name={item.nome}
+                                price={item.preco}
+                                qtd={item.qtd}
+                                addClick={() => addItem(item)}
+                                removeClick={() => removeItem(item)}
+                            />
+                        </li>
                     ))}
                 </ul>
                 <div className="total">
