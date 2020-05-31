@@ -5,6 +5,7 @@ import cep from '../../services/cep'
 import './styles.css'
 
 import HeaderNavigate from '../../components/HeaderNavigate'
+import api from '../../services/api'
 
 function Register () {
     const history = useHistory()
@@ -40,6 +41,20 @@ function Register () {
 
     function registerHandle (e) {
         e.preventDefault()
+        const data = {
+            nome,
+            email,
+            cepText,
+            bairro,
+            logradouro,
+            uf,
+            cidade,
+            numero,
+            complemento,
+            telefone1,
+            telefone2,
+            telefone3,
+        }
     }
     return (
         <div className="containerRegister">

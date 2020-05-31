@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
 
+import api from '../../services/api'
+
 import './styles.css'
 
 function SideDrawer (props) {
@@ -10,7 +12,6 @@ function SideDrawer (props) {
     const history = useHistory()
 
     const sleep = (milliseconds) => {
-        console.log('opa')
         return new Promise(resolve => setTimeout(resolve, milliseconds))
     }
 
@@ -45,11 +46,18 @@ function SideDrawer (props) {
     }
     useEffect(() => {
         effectLogon()
-    })
+    }, [])
 
-    function handlerLogon (e) {
+    async function handlerLogon (e) {
         e.preventDefault()
-        history.push('/categories')
+        try {
+            const response = await api.post('/login', { email, senha: password })
+            console.log(response)
+            console.log(response.headers.get('Authorization'))
+            //history.push('/categories')
+        } catch (e) {
+            alert(e)
+        }
     }
 
     return (
