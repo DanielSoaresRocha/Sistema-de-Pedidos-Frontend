@@ -55,6 +55,8 @@ function Register () {
             telefone2,
             telefone3,
         }
+
+        api.post('/cadastrar', data)
     }
     return (
         <div className="containerRegister">

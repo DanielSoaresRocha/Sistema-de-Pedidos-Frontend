@@ -83,10 +83,8 @@ border: 2px solid greenyellow;
 @keyframes down {
     from{
         transform: translateY(-100px);
-        opacity: 1;
     }to{
         transform: translateY(750px) rotate(360deg);
-        opacity: 0;
     }
 }
 

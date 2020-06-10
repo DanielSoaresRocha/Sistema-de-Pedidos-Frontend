@@ -44,6 +44,7 @@ function SideDrawer (props) {
         await sleep(15 * 1000)
         effectLogon()
     }
+
     useEffect(() => {
         effectLogon()
     }, [])
@@ -51,10 +52,12 @@ function SideDrawer (props) {
     async function handlerLogon (e) {
         e.preventDefault()
         try {
+            //silvawesley374@gmail.com
+            //123
             const response = await api.post('/login', { email, senha: password })
-            console.log(response)
-            console.log(response.headers.get('Authorization'))
-            //history.push('/categories')
+            let token = response.headers.authorization
+            localStorage.setItem('token', token)
+            history.push('/categories')
         } catch (e) {
             alert(e)
         }
