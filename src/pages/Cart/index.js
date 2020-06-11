@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom'
+import api from '../../services/api'
 
 import ItemCart from '../../components/ItemCart'
 import cart from '../../utils/cart'
@@ -51,7 +52,7 @@ function Cart () {
                     <p>{`Total: ${cart.getTotalCart()}.00 R$`}</p>
                     <div className="buttons">
                         <button onClick={() => history.push('/categories')}>Continuar comprando</button>
-                        <button onClick={() => history.push('/enderecos')}>Finalizar pedido</button>
+                        <button >Finalizar pedido</button>
                     </div>
                 </div>
             </div>

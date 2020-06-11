@@ -55,12 +55,16 @@
 
 .containerCart .total .buttons button:nth-child(2){
     margin-top: 10px;
-    background-color: green;
+    background-color: rgb(48, 156, 38);
     color: white;
 }
 
-.containerCart .total .buttons button:hover{
+.containerCart .total .buttons button:nth-child(1):hover{
     background-color: blue;
+}
+
+.containerCart .total .buttons button:nth-child(2):hover{
+    background-color: green;
 }
 
 @media(max-width: 1000px){
