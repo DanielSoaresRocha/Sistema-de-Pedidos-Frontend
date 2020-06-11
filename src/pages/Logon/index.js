@@ -11,42 +11,36 @@ function SideDrawer (props) {
 
     const history = useHistory()
 
-    const sleep = (milliseconds) => {
-        return new Promise(resolve => setTimeout(resolve, milliseconds))
-    }
-
-    async function effectLogon () {
-        console.log("foi")
-        const randon = (min, max) => Math.floor(Math.random() * (max - min) + min)
-
-        const ulSquares = document.querySelector("ul.squares")
-        if (!ulSquares)
-            return
-        ulSquares.innerHTML = ''
-        console.log(ulSquares)
-        for (let i = 0; i <= 10; i++) {
-            const li = document.createElement("li")
-            let size
-            if (window.innerWidth > 600) {
-                size = randon(50, 100)
-            } else {
-                size = randon(20, 70)
-            }
-
-            li.style.width = `${size}px`
-            li.style.height = `${size}px`
-
-            li.style.left = `${randon(1, 80)}%`
-            li.style.animationDuration = `${randon(5, 30)}s`
-            li.style.animationDelay = `${randon(0.1, 5)}`
-            ulSquares.appendChild(li)
-        }
-        await sleep(15 * 1000)
-        effectLogon()
-    }
-
     useEffect(() => {
-        effectLogon()
+        const interval = setInterval(() => {
+            console.log("foi")
+            const randon = (min, max) => Math.floor(Math.random() * (max - min) + min)
+
+            const ulSquares = document.querySelector("ul.squares")
+            if (!ulSquares)
+                return
+            ulSquares.innerHTML = ''
+            for (let i = 0; i <= 10; i++) {
+                const li = document.createElement("li")
+                let size
+                if (window.innerWidth > 600) {
+                    size = randon(50, 100)
+                } else {
+                    size = randon(20, 70)
+                }
+
+                li.style.width = `${size}px`
+                li.style.height = `${size}px`
+
+                li.style.left = `${randon(1, 80)}%`
+                li.style.animationDuration = `${randon(5, 30)}s`
+                li.style.animationDelay = `${randon(0.1, 5)}`
+                ulSquares.appendChild(li)
+            }
+        }, 15000);
+
+        return () => clearInterval(interval);
+
     }, [])
 
     async function handlerLogon (e) {
