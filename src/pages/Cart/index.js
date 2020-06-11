@@ -49,7 +49,10 @@ function Cart () {
                 </ul>
                 <div className="total">
                     <p>{`Total: ${cart.getTotalCart()}.00 R$`}</p>
-                    <button onClick={() => history.push('/categories')}>Continuar comprando</button>
+                    <div className="buttons">
+                        <button onClick={() => history.push('/categories')}>Continuar comprando</button>
+                        <button onClick={() => history.push('/enderecos')}>Finalizar pedido</button>
+                    </div>
                 </div>
             </div>
         </Home>

@@ -31,21 +31,36 @@
     margin-left: 20px;
 }
 
-.containerCart .total button{
+.containerCart .total .buttons{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    justify-self: start;
+    align-self: end;
+}
+.containerCart .total .buttons button{
     height:70px;
     font-size: 30px;
     border: 1px solid blue;
     padding: 10px;
     cursor: pointer;
-    color: blue;
-
     align-self: center; /*novo aprendizado => em relação a celula do grid*/
-    
+    width: 100%;
 }
 
-.containerCart .total button:hover{
-    background-color: rgb(27, 177, 223);
+.containerCart .total .buttons button:nth-child(1){
+    background-color: rgb(14, 150, 230);
     color: white;
+}
+
+.containerCart .total .buttons button:nth-child(2){
+    margin-top: 10px;
+    background-color: green;
+    color: white;
+}
+
+.containerCart .total .buttons button:hover{
+    background-color: blue;
 }
 
 @media(max-width: 1000px){
@@ -62,10 +77,10 @@
     .containerCart .total{
         display: flex;
         flex-direction: column;
-        height: auto;
+        height: max-content;
     }
 
-    .containerCart .total button{
+    .containerCart .total .buttons button{
         width: 80%;
         justify-self: center;
     }
@@ -74,7 +89,7 @@
 @media(max-width:800px){
     .containerCart{
         max-height: 500px;
-        overflow: hidden;
+        overflow: scroll;
     }
     .containerCart ul{
         display: grid;
@@ -93,10 +108,13 @@
         box-sizing: border-box;
     }
 
-    .containerCart .total button{
+    .containerCart .total .buttons{
+        width: 100%;
+    }
+
+    .containerCart .total .buttons button{
         margin-top: 30px;
-        width: 95%;
-        margin-left: 2.5%;
+        width: 90%;
         font-size: 25px;
         border: 1px solid blue;
         padding: 10px;
