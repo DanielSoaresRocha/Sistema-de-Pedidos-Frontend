@@ -11,6 +11,9 @@ function Register () {
     const history = useHistory()
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
+    const [cpfOuCnpj, setCpfOuCnpj] = useState('')
+    const [type, setType] = useState(0)
+    const [password, setPassword] = useState('')
 
     const [cepText, setCep] = useState('')
     const [bairro, setBairro] = useState('')
@@ -42,21 +45,28 @@ function Register () {
     function registerHandle (e) {
         e.preventDefault()
         const data = {
-            nome,
-            email,
-            cepText,
             bairro,
-            logradouro,
-            uf,
-            cidade,
-            numero,
+            cep: cepText,
+            cidade: 0, // confuso
             complemento,
+            cpfOuCnpj,
+            email,
+            logradouro,
+            nome,
+            numero,
+            senha: password,
             telefone1,
             telefone2,
             telefone3,
+            tipo: type,
+            //uf, falta no banco
         }
-
-        api.post('/cadastrar', data)
+        api.post('/clientes', data).then(response => {
+            console.log(response)
+            history.push('/')
+        }).catch(error => {
+            console.log(error)
+        })
     }
     return (
         <div className="containerRegister">
@@ -77,15 +87,23 @@ function Register () {
                         onChange={e => setEmail(e.target.value)}
                         required={true}
                     />
+                    <input
+                        placeholder="CPF ou CNPJ"
+                        value={cpfOuCnpj}
+                        onChange={e => setCpfOuCnpj(e.target.value)}
+                        required={true}
+                    />
+
                     <div className="typePeople">
                         <label>Tipo de pessoa: </label>
                         <div className="radios">
                             <input
                                 id="fisica"
                                 type="radio"
-                                value="fisica"
+                                value="0"
                                 name="gender"
                                 required={true}
+                                onChange={e => setType(e.target.value)}
                             />
                             <label
                                 htmlFor="fisica"
@@ -95,9 +113,10 @@ function Register () {
                             <input
                                 id="juridica"
                                 type="radio"
-                                value="juridica"
+                                value="1"
                                 name="gender"
                                 required={true}
+                                onChange={e => setType(e.target.value)}
                             />
                             <label
                                 htmlFor="juridica"
@@ -163,6 +182,13 @@ function Register () {
                         placeholder="Telefone 3"
                         value={telefone3}
                         onChange={e => setTelefone3(e.target.value)} />
+                    <input
+                        placeholder="Senha para logar"
+                        type="password"
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                        required={true}
+                    />
                 </section>
 
                 <div className="buttonContainer">
