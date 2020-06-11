@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom'
 
 import ItemCart from '../../components/ItemCart'
-import cart from '../../data/cart'
+import cart from '../../utils/cart'
 
 import './styles.css'
 import Home from '../../components/Home'

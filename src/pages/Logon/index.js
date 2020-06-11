@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
+import responseError from '../../utils/responseError'
 
 import api from '../../services/api'
 
@@ -53,7 +54,8 @@ function SideDrawer (props) {
             localStorage.setItem('token', token)
             history.push('/categories')
         } catch (e) {
-            alert(e)
+            console.log(e.response)
+            responseError(e)
         }
     }
 

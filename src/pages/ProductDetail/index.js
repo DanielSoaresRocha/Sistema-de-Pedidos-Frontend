@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom'
 import api from '../../services/api'
-import cart from '../../data/cart'
+import cart from '../../utils/cart'
 
 import HeaderNavigate from '../../components/HeaderNavigate'
 import LittleCart from '../../components/LittleCart'
