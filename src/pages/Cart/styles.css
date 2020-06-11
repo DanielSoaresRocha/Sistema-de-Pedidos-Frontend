@@ -18,23 +18,29 @@
     list-style: none;
 }
 
+.containerCart .total{
+    height: 500px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    box-sizing: border-box; 
+}
+
 .containerCart .total p{
     font-size: 50px;
     padding-top: 30px;
     margin-left: 20px;
 }
 
-.containerCart .total{
-    height: 500px;
-}
-
 .containerCart .total button{
-    margin-top: 100px;
+    height:70px;
     font-size: 30px;
     border: 1px solid blue;
     padding: 10px;
     cursor: pointer;
     color: blue;
+
+    align-self: center; /*novo aprendizado => em relação a celula do grid*/
+    
 }
 
 .containerCart .total button:hover{
@@ -51,6 +57,17 @@
     .containerCart ul{
         width: 100%;
         box-sizing: border-box;
+    }
+
+    .containerCart .total{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .containerCart .total button{
+        width: 80%;
+        justify-self: center;
     }
 }
 
