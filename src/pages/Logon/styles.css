@@ -69,8 +69,10 @@ border: 2px solid greenyellow;
 .squares li{
     width: 50px;
     height: 50px;
-    background-color: rgba(255, 255, 255, 0.7);
-    list-style: none;
+    background-color: transparent;
+    background-image: url('../../assets/carrinho-compras.png');
+    background-size: cover;
+    background-image: none;
     position: absolute;
     top: -100px;
     left: 0px;
@@ -78,14 +80,58 @@ border: 2px solid greenyellow;
     animation-fill-mode: none;
     overflow: hidden;
     z-index: -1;
+    /*background-image: linear-gradient(45deg, red, blue, #ef7330, #706f72);*/
 }
 
+.squares li:nth-child(1){
+    background-image: url('../../assets/cart.png');
+}
+.squares li:nth-child(2){
+    background-image: url('../../assets/shop.png');
+}
+.squares li:nth-child(3){
+    background-image: url('../../assets/hands.png');
+}
+.squares li:nth-child(4){
+    background-image: url('../../assets/car2.png');
+}
+.squares li:nth-child(5){
+    background-image: url('../../assets/list.png');
+}
+.squares li:nth-child(6){
+    background-image: url('../../assets/carrinho-compras.png');
+}
+.squares li:nth-child(7){
+    background-image: url('../../assets/bag.png');
+}
+.squares li:nth-child(8){
+    background-image: url('../../assets/car3.png');
+}
+
+.squares li:nth-child(9){
+    background-image: url('../../assets/car3.png');
+}
+.squares li:nth-child(10){
+    background-image: url('../../assets/bags.png');
+}
+
+
 @keyframes down {
-    from{
+    0%{
         transform: translateY(-100px);
-    }to{
+        opacity: 1;
+    }
+    70%{
+        opacity: 0.9;
+    }
+    90%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
         transform: translateY(750px) rotate(360deg);
     }
+    
 }
 
 @media(max-width: 600px){
