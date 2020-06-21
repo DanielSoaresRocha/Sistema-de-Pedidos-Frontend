@@ -109,7 +109,7 @@ border: 2px solid greenyellow;
 }
 
 .squares li:nth-child(9){
-    background-image: url('../../assets/car3.png');
+    background-image: url('../../assets/list.png');
 }
 .squares li:nth-child(10){
     background-image: url('../../assets/bags.png');
