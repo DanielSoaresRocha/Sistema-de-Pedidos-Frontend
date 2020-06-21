@@ -1,5 +1,5 @@
 
-# Ecoleta-Frontend
+# Sistema-de-pedidos-Frontend 
 A system to simulate an ecommerce
 
 # Technologies used:
