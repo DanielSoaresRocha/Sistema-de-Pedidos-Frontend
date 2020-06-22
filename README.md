@@ -1,6 +1,7 @@
 
 # Sistema-de-pedidos-Frontend 
-A system to simulate an ecommerce
+A system Frontend to simulate an ecommerce. <br />
+The backend (api rest) of the project made by [Wesley Leocadio](https://github.com/WesleyLeocadio) is available [here](https://github.com/WesleyLeocadio/Sistema-de-Pedidos-Backend)
 
 # Technologies used:
 - React.js
