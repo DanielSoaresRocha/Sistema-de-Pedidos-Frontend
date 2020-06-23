@@ -1,6 +1,10 @@
 const reponseError = (error) => {
-    const numberError = Number(error.response.data.status)
-
+    let numberError
+    try {
+        numberError = Number(error.response.data.status)
+    } catch (error) {
+        alert('Servidor ainda está indiponível')
+    }
     switch (numberError) {
         case 400:
             alert('Preencha os dados corretamente')
