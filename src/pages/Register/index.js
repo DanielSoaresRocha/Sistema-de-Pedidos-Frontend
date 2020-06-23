@@ -9,11 +9,11 @@ import api from '../../services/api'
 
 function Register () {
     const history = useHistory()
-    const [nome, setNome] = useState('Daniel Soares')
-    const [email, setEmail] = useState('denk@ufrn.edu.br')
-    const [cpfOuCnpj, setCpfOuCnpj] = useState('72324066445')
+    const [nome, setNome] = useState('')
+    const [email, setEmail] = useState('')
+    const [cpfOuCnpj, setCpfOuCnpj] = useState('')
     const [type, setType] = useState(0)
-    const [password, setPassword] = useState('daniel')
+    const [password, setPassword] = useState('')
 
     const [cepText, setCep] = useState('')
     const [bairro, setBairro] = useState('')
@@ -21,11 +21,11 @@ function Register () {
     const [uf, setUf] = useState('')
     const [cidade, setCidade] = useState('')
 
-    const [numero, setNumero] = useState('270')
-    const [complemento, setComplemento] = useState('Ao lado da empresa malheiro')
-    const [telefone1, setTelefone1] = useState('84991762383')
-    const [telefone2, setTelefone2] = useState('2134')
-    const [telefone3, setTelefone3] = useState('1234')
+    const [numero, setNumero] = useState('')
+    const [complemento, setComplemento] = useState('')
+    const [telefone1, setTelefone1] = useState('')
+    const [telefone2, setTelefone2] = useState('')
+    const [telefone3, setTelefone3] = useState('')
 
     async function cepHandle (cepInput) {
         try {
