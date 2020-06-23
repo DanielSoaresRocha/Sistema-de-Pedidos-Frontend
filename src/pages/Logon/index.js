@@ -12,32 +12,37 @@ function SideDrawer (props) {
 
     const history = useHistory()
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            console.log("foi")
-            const randon = (min, max) => Math.floor(Math.random() * (max - min) + min)
+    function animation () {
+        console.log("foi")
+        const randon = (min, max) => Math.floor(Math.random() * (max - min) + min)
 
-            const ulSquares = document.querySelector("ul.squares")
-            if (!ulSquares)
-                return
-            ulSquares.innerHTML = ''
-            for (let i = 0; i <= 10; i++) {
-                const li = document.createElement("li")
-                let size
-                if (window.innerWidth > 600) {
-                    size = randon(50, 100)
-                } else {
-                    size = randon(20, 70)
-                }
-
-                li.style.width = `${size}px`
-                li.style.height = `${size}px`
-
-                li.style.left = `${randon(1, 80)}%`
-                li.style.animationDuration = `${randon(5, 30)}s`
-                li.style.animationDelay = `${randon(0.1, 5)}`
-                ulSquares.appendChild(li)
+        const ulSquares = document.querySelector("ul.squares")
+        if (!ulSquares)
+            return
+        ulSquares.innerHTML = ''
+        for (let i = 0; i <= 10; i++) {
+            const li = document.createElement("li")
+            let size
+            if (window.innerWidth > 600) {
+                size = randon(50, 100)
+            } else {
+                size = randon(20, 70)
             }
+
+            li.style.width = `${size}px`
+            li.style.height = `${size}px`
+
+            li.style.left = `${randon(1, 80)}%`
+            li.style.animationDuration = `${randon(5, 30)}s`
+            li.style.animationDelay = `${randon(0.1, 5)}`
+            ulSquares.appendChild(li)
+        }
+    }
+
+    useEffect(() => {
+        animation()
+        const interval = setInterval(() => {
+            animation()
         }, 15000);
 
         return () => clearInterval(interval);
