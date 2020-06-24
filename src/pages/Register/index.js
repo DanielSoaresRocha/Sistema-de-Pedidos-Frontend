@@ -12,7 +12,7 @@ function Register () {
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
     const [cpfOuCnpj, setCpfOuCnpj] = useState('')
-    const [type, setType] = useState(0)
+    const [type, setType] = useState(1)
     const [password, setPassword] = useState('')
 
     const [cepText, setCep] = useState('')
@@ -30,6 +30,7 @@ function Register () {
     async function cepHandle (cepInput) {
         try {
             setCep(cepInput)
+            setCep(cepInput.replace('-', ''))// retirar traço
             if (cepInput.length >= 8) {
                 let { data } = await cep.get(`${cepInput}/json/`)
                 setBairro(data.bairro)
@@ -47,7 +48,7 @@ function Register () {
         const data = {
             bairro,
             cep: cepText,
-            cidade: 2, // confuso
+            cidade: cidade,
             complemento,
             cpfOuCnpj,
             email,
@@ -58,8 +59,8 @@ function Register () {
             telefone1,
             telefone2,
             telefone3,
-            tipo: type,
-            //uf, falta no banco
+            tipo: parseInt(type),
+            estado: uf
         }
         api.post('/clientes', data).then(response => {
             console.log(response)
@@ -101,7 +102,7 @@ function Register () {
                             <input
                                 id="fisica"
                                 type="radio"
-                                value="0"
+                                value="1"
                                 name="gender"
                                 required={true}
                                 onChange={e => setType(e.target.value)}
@@ -114,7 +115,7 @@ function Register () {
                             <input
                                 id="juridica"
                                 type="radio"
-                                value="1"
+                                value="2"
                                 name="gender"
                                 required={true}
                                 onChange={e => setType(e.target.value)}

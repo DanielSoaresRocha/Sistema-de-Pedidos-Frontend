@@ -4,6 +4,7 @@ const reponseError = (error) => {
         numberError = Number(error.response.data.status)
     } catch (error) {
         alert('Servidor ainda está indiponível')
+        return
     }
     switch (numberError) {
         case 400:
