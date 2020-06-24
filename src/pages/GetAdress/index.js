@@ -43,27 +43,6 @@ function GetAdress () {
                             <p>{`${adress.bairro}, ${adress.cidade.estado.nome}`}</p>
                         </li>
                     ))}
-                    {adresses.map(adress => (
-                        <li key={adress.id}>
-                            <p>{`${adress.logadouro}, ${adress.numero}`}</p>
-                            <p>{`${adress.complemento}, CEP ${adress.cep}`}</p>
-                            <p>{`${adress.bairro}, ${adress.cidade.estado.nome}`}</p>
-                        </li>
-                    ))}
-                    {adresses.map(adress => (
-                        <li key={adress.id}>
-                            <p>{`${adress.logadouro}, ${adress.numero}`}</p>
-                            <p>{`${adress.complemento}, CEP ${adress.cep}`}</p>
-                            <p>{`${adress.bairro}, ${adress.cidade.estado.nome}`}</p>
-                        </li>
-                    ))}
-                    {adresses.map(adress => (
-                        <li key={adress.id}>
-                            <p>{`${adress.logadouro}, ${adress.numero}`}</p>
-                            <p>{`${adress.complemento}, CEP ${adress.cep}`}</p>
-                            <p>{`${adress.bairro}, ${adress.cidade.estado.nome}`}</p>
-                        </li>
-                    ))}
                 </ul>
             </div >
         </HeaderNavigate>
