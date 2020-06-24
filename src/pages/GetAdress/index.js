@@ -33,22 +33,41 @@ function GetAdress () {
         <HeaderNavigate name={'Fechamento de pedido'} navigate={() => history.push('/cart')}>
             <div className='containerAdress'>
                 <br />
-                <hr styles="border-top: 1px solid red" />
-                <h1>Selecione um endereço</h1>
+                <hr />
+                <span>Selecione um endereço</span>
                 <ul>
                     {adresses.map(adress => (
                         <li key={adress.id}>
-                            {`${adress.logadouro}, ${adress.numero}`}
-                            <br />
-                            {`${adress.complemento}, CEP ${adress.cep}`}
-                            <br />
-                            {`${adress.bairro}, ${adress.cidade.estado.nome}`}
+                            <p>{`${adress.logadouro}, ${adress.numero}`}</p>
+                            <p>{`${adress.complemento}, CEP ${adress.cep}`}</p>
+                            <p>{`${adress.bairro}, ${adress.cidade.estado.nome}`}</p>
+                        </li>
+                    ))}
+                    {adresses.map(adress => (
+                        <li key={adress.id}>
+                            <p>{`${adress.logadouro}, ${adress.numero}`}</p>
+                            <p>{`${adress.complemento}, CEP ${adress.cep}`}</p>
+                            <p>{`${adress.bairro}, ${adress.cidade.estado.nome}`}</p>
+                        </li>
+                    ))}
+                    {adresses.map(adress => (
+                        <li key={adress.id}>
+                            <p>{`${adress.logadouro}, ${adress.numero}`}</p>
+                            <p>{`${adress.complemento}, CEP ${adress.cep}`}</p>
+                            <p>{`${adress.bairro}, ${adress.cidade.estado.nome}`}</p>
+                        </li>
+                    ))}
+                    {adresses.map(adress => (
+                        <li key={adress.id}>
+                            <p>{`${adress.logadouro}, ${adress.numero}`}</p>
+                            <p>{`${adress.complemento}, CEP ${adress.cep}`}</p>
+                            <p>{`${adress.bairro}, ${adress.cidade.estado.nome}`}</p>
                         </li>
                     ))}
                 </ul>
-            </div>
+            </div >
         </HeaderNavigate>
-    );
+    )
 }
 
 export default GetAdress;
