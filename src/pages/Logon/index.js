@@ -7,8 +7,8 @@ import api from '../../services/api'
 import './styles.css'
 
 function Logon (props) {
-    const [email, setEmail] = useState('denk@ufrn.edu.br')
-    const [password, setPassword] = useState('123')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
     const history = useHistory()
 
