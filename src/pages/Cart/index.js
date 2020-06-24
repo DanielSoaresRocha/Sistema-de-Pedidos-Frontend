@@ -31,6 +31,23 @@ function Cart () {
         setCartItens(cart.getCart)
     }
 
+    function handleAdress () {
+        const token = localStorage.getItem('token')
+        const email = localStorage.getItem('email')
+        api.get(`http://localhost:3333/clientes/email`, {
+            params: {
+                value: email
+            },
+            headers: {
+                Authorization: token
+            }
+        }).then(response => {
+            console.log(response)
+        }).catch(error => {
+            console.log(error)
+        })
+    }
+
     return (
         <Home name={'Cart'}>
             <div className="containerCart">
@@ -52,7 +69,7 @@ function Cart () {
                     <p>{`Total: ${cart.getTotalCart()}.00 R$`}</p>
                     <div className="buttons">
                         <button onClick={() => history.push('/categories')}>Continuar comprando</button>
-                        <button >Finalizar pedido</button>
+                        <button onClick={() => handleAdress()}>Finalizar pedido</button>
                     </div>
                 </div>
             </div>

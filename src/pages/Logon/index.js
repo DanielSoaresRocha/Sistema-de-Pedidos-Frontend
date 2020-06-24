@@ -52,11 +52,10 @@ function SideDrawer (props) {
     async function handlerLogon (e) {
         e.preventDefault()
         try {
-            //silvawesley374@gmail.com
-            //123
             const response = await api.post('/login', { email, senha: password })
             let token = response.headers.authorization
             localStorage.setItem('token', token)
+            localStorage.setItem('email', email)
             history.push('/categories')
         } catch (e) {
             console.log(e.response)

@@ -8,6 +8,7 @@ import Profile from './pages/Profile'
 import Products from './pages/Products'
 import ProductDetail from './pages/ProductDetail'
 import Cart from './pages/Cart'
+import GetAdress from './pages/GetAdress'
 
 export default function Routes () {
     return (
@@ -20,6 +21,7 @@ export default function Routes () {
                 <Route path="/products/:id" component={Products} />
                 <Route path="/product-detail/:id" component={ProductDetail} />
                 <Route path="/cart" component={Cart} />
+                <Route path="/get-adress" component={GetAdress} />
             </Switch>
         </BrowserRouter>
     )
