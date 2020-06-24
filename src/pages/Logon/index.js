@@ -6,9 +6,9 @@ import api from '../../services/api'
 
 import './styles.css'
 
-function SideDrawer (props) {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+function Logon (props) {
+    const [email, setEmail] = useState('denk@ufrn.edu.br')
+    const [password, setPassword] = useState('123')
 
     const history = useHistory()
 
@@ -93,4 +93,4 @@ function SideDrawer (props) {
     );
 }
 
-export default SideDrawer;
+export default Logon;

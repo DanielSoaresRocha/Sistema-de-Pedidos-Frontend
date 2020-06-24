@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom'
-import api from '../../services/api'
 
 import ItemCart from '../../components/ItemCart'
 import cart from '../../utils/cart'
@@ -31,23 +30,6 @@ function Cart () {
         setCartItens(cart.getCart)
     }
 
-    function handleAdress () {
-        const token = localStorage.getItem('token')
-        const email = localStorage.getItem('email')
-        api.get(`http://localhost:3333/clientes/email`, {
-            params: {
-                value: email
-            },
-            headers: {
-                Authorization: token
-            }
-        }).then(response => {
-            console.log(response)
-        }).catch(error => {
-            console.log(error)
-        })
-    }
-
     return (
         <Home name={'Cart'}>
             <div className="containerCart">
@@ -69,7 +51,7 @@ function Cart () {
                     <p>{`Total: ${cart.getTotalCart()}.00 R$`}</p>
                     <div className="buttons">
                         <button onClick={() => history.push('/categories')}>Continuar comprando</button>
-                        <button onClick={() => handleAdress()}>Finalizar pedido</button>
+                        <button onClick={() => history.push('/get-adress')}>Finalizar pedido</button>
                     </div>
                 </div>
             </div>
