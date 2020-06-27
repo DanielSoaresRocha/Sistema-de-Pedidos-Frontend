@@ -25,7 +25,7 @@ function GetAdress () {
         }).catch(error => {
             console.log(error)
             history.push('/')
-            alert('Sua sessão expirou')
+            alert('Sua sessão expirou.')
         })
     }, [history])
 
