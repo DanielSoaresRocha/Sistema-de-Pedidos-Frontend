@@ -23,7 +23,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 25px;
     row-gap: 20px;
-    align-self: center;  
+    align-self: flex-start;
 }
 
 .containerAdress ul li{

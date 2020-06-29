@@ -129,7 +129,7 @@ border: 2px solid greenyellow;
     }
     100%{
         opacity: 0;
-        transform: translateY(750px) rotate(360deg);
+        transform: translateY(100vh) rotate(360deg);
     }
     
 }

@@ -1,0 +1,18 @@
+.containerPayment {
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.containerPayment hr{
+    border-top: 5px solid gray;
+    border-radius: 8px;
+}
+
+.containerPayment span{
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

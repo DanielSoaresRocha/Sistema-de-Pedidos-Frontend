@@ -37,7 +37,7 @@ function GetAdress () {
                 <span>Selecione um endereço</span>
                 <ul>
                     {adresses.map(adress => (
-                        <li key={adress.id}>
+                        <li onClick={() => history.push('/form-payment')} key={adress.id}>
                             <p>{`${adress.logadouro}, ${adress.numero}`}</p>
                             <p>{`${adress.complemento}, CEP ${adress.cep}`}</p>
                             <p>{`${adress.bairro}, ${adress.cidade.estado.nome}`}</p>
