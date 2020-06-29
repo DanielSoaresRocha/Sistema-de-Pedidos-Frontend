@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 import './styles.css'
@@ -6,43 +6,59 @@ import HeaderNavigate from '../../components/HeaderNavigate';
 
 function FormPayment () {
     const history = useHistory()
+    const [billet, setBillet] = useState(false)
 
-    let billet = true
+
     return (
         <HeaderNavigate name={'Forma de pagamento'} navigate={() => history.push('/get-adress')}>
             <div className='containerPayment'>
                 <br />
-                <span>Selecione uma forma de pagamento</span>
+                <span>Tipo de pagamento</span>
                 <div className='selectPayment'>
-                    <label
-                        htmlFor='cartao'>
-                        Pagamento com cartão
-                         </label>
                     <input
                         id='cartao'
                         value='cartao'
                         name="gender"
                         type="radio"
+                        onChange={() => setBillet(false)}
                     />
                     <label
-                        htmlFor='boleto'>
-                        Pagamento com boleto
-                        </label>
+                        htmlFor='cartao'>
+                        Pagamento com cartão
+                         </label>
                     <input
                         id='boleto'
                         value='boleto'
                         name="gender"
                         type="radio"
+                        onChange={() => setBillet(true)}
                     />
+                    <label
+                        htmlFor='boleto'>
+                        Pagamento com boleto
+                        </label>
                 </div>
                 <div className='numPlots'>
                     {billet === true ? (
-                        <select>
-                            <option value='1'>1</option>
-                            <option value='2'>2</option>
-                        </select>
-                    ) : console.log('ok')}
+                        <>
+                            <h3>Nº parcelas no boleto</h3>
+                            <select>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                                <option value='6'>6</option>
+                                <option value='7'>7</option>
+                                <option value='8'>8</option>
+                                <option value='9'>9</option>
+                                <option value='10'>10</option>
+                            </select>
+                        </>
+                    ) : (<div />)}
                 </div>
+
+                <button type='button'>Próximo</button>
             </div>
         </HeaderNavigate>
     )
