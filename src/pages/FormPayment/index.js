@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import request from '../../utils/request'
 
 import './styles.css'
 import HeaderNavigate from '../../components/HeaderNavigate';
@@ -11,7 +12,12 @@ function FormPayment () {
     function handleFinish (e) {
         e.preventDefault()
 
-        alert('vai para outra tela')
+        const data = {
+            cliente: request.getClient(),
+            enderecoDeEntrega: request.getAdressDelivery(),
+        }
+
+        console.log(data)
     }
 
     return (
