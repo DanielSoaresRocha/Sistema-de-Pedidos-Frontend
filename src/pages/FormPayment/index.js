@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import request from '../../utils/request'
 
 import './styles.css'
 import HeaderNavigate from '../../components/HeaderNavigate';
@@ -8,16 +7,13 @@ import HeaderNavigate from '../../components/HeaderNavigate';
 function FormPayment () {
     const history = useHistory()
     const [billet, setBillet] = useState(false)
+    let qtdBillet = 0;
 
     function handleFinish (e) {
         e.preventDefault()
+        billet === false ? console.log("manda 0 para outra tela") : console.log("manda a qtd de blots para outra tela")
 
-        const data = {
-            cliente: request.getClient(),
-            enderecoDeEntrega: request.getAdressDelivery(),
-        }
-
-        console.log(data)
+        alert(qtdBillet)
     }
 
     return (
@@ -56,7 +52,7 @@ function FormPayment () {
                         {billet === true ? (
                             <>
                                 <h3>Nº parcelas no boleto</h3>
-                                <select>
+                                <select onChange={event => qtdBillet = event.target.value}>
                                     <option value='1'>1</option>
                                     <option value='2'>2</option>
                                     <option value='3'>3</option>
