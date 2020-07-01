@@ -10,6 +10,7 @@ import ProductDetail from './pages/ProductDetail'
 import Cart from './pages/Cart'
 import GetAdress from './pages/GetAdress'
 import FormPayment from './pages/FormPayment'
+import CheckRequest from './pages/CheckRequest'
 
 export default function Routes () {
     return (
@@ -24,6 +25,7 @@ export default function Routes () {
                 <Route path="/cart" component={Cart} />
                 <Route path="/get-adress" component={GetAdress} />
                 <Route path="/form-payment" component={FormPayment} />
+                <Route path="/check-request/:qtdBillets" component={CheckRequest} />
             </Switch>
         </BrowserRouter>
     )

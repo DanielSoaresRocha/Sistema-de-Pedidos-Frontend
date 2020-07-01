@@ -11,9 +11,8 @@ function FormPayment () {
 
     function handleFinish (e) {
         e.preventDefault()
-        billet === false ? console.log("manda 0 para outra tela") : console.log("manda a qtd de blots para outra tela")
 
-        alert(qtdBillet)
+        billet === false ? history.push(`/check-request/${0}`) : history.push(`/check-request/${qtdBillet}`)
     }
 
     return (
