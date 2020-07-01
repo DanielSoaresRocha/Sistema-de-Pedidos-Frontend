@@ -1,0 +1,46 @@
+.checkContainer{
+    margin: 0px;
+    padding: 20px;
+}
+
+.checkContainer section {
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 300px;
+}
+.checkContainer section ul li{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    text-align: left;
+}
+.checkContainer section ul li img{
+    width: 100px;
+    height: 100px;
+}
+
+.checkContainer section ul li .infoItem{
+    max-width: 100px;
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.checkContainer section ul li .infoItem p:first-child{
+    font-size: 20px;
+}
+
+.checkContainer section ul li .price{
+    max-width: 50px;
+    min-width: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    
+}
