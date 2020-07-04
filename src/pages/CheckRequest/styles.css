@@ -1,6 +1,10 @@
 .checkContainer{
     margin: 0px;
     padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 700px;
+    margin: auto;
 }
 
 .checkContainer section {
@@ -9,6 +13,12 @@
     border-radius: 8px;
     max-width: 300px;
 }
+
+.checkContainer section ul{
+    overflow: scroll;
+    max-height: 300px;
+}
+
 .checkContainer section ul li{
     list-style: none;
     display: flex;
@@ -42,5 +52,16 @@
     width: 100%;
     text-align: center;
     justify-content: center;
-    
+}
+
+.checkContainer section:nth-child(2){
+    max-height: 200px;
+}
+
+.checkContainer section:nth-child(2) p:nth-child(2){
+    margin-top: 25px;
+}
+
+.checkContainer section:nth-child(2) h1:nth-child(4){
+    margin-top: 25px;
 }

@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 import cart from '../../utils/cart'
+import request from '../../utils/request'
 
 import './styles.css'
 import Home from '../../components/Home';
@@ -11,7 +12,7 @@ function CheckRequest () {
     const { qtdBillets } = useParams()
 
     useEffect(() => {
-        console.log(cart.getCart())
+        console.log(request.getAdressDelivery())
     })
 
     return (
@@ -36,6 +37,16 @@ function CheckRequest () {
                         ))}
                         <h1>Total: {`$${cart.getTotalCart()}`}</h1>
                     </ul>
+                </section>
+                <section>
+                    <h1>Cliente</h1>
+                    <p>{request.getClient().nome}</p>
+                    <p>{request.getClient().email}</p>
+
+                    <h1>Endereço de entrega</h1>
+                    <p>{`${request.getAdressDelivery().logadouro}, ${request.getAdressDelivery().numero}`}</p>
+                    <p>{`${request.getAdressDelivery().complemento} CEP ${request.getAdressDelivery().cep}`}</p>
+                    <p>{`${request.getAdressDelivery().bairro}, ${request.getAdressDelivery().cidade.estado.nome}`}</p>
                 </section>
             </div>
         </Home>
