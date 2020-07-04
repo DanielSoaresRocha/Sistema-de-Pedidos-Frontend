@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React from 'react'
+import { useParams, useHistory } from 'react-router-dom'
 
 import cart from '../../utils/cart'
 import request from '../../utils/request'
@@ -8,12 +8,8 @@ import './styles.css'
 import Home from '../../components/Home';
 
 function CheckRequest () {
-    // eslint-disable-next-line
+    const history = useHistory()
     const { qtdBillets } = useParams()
-
-    useEffect(() => {
-        console.log(request.getAdressDelivery())
-    })
 
     return (
         <Home name={'Confira seu pedido'}>
@@ -63,7 +59,7 @@ function CheckRequest () {
 
                 <div className='buttons'>
                     <button>Confirmar pedido</button>
-                    <button>voltar</button>
+                    <button onClick={() => history.goBack()}>voltar</button>
                 </div>
             </div>
         </Home>

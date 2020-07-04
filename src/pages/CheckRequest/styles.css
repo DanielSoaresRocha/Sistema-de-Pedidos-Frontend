@@ -95,3 +95,42 @@
     cursor: pointer;
     margin-top: 10px;
 }
+
+@media(max-width: 720px){
+    .checkContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .checkContainer section{
+        min-width: 280px;
+        max-width: 280px;
+    }
+}
+
+@media(max-width: 470px){
+    .checkContainer{
+        margin-left: 0px;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .checkContainer section{
+        width: 100%;
+        margin-top: 20px;
+    }
+    .checkContainer section ul li img{
+        width: 80px;
+        height: 80px;
+    }
+
+    .checkContainer section ul li .infoItem{
+        width: 80px;
+    }
+
+    .checkContainer{
+        overflow: scroll;
+    }
+}
