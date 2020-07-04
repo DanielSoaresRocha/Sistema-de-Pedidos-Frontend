@@ -60,6 +60,11 @@ function CheckRequest () {
                         )
                     }
                 </section>
+
+                <div className='buttons'>
+                    <button>Confirmar pedido</button>
+                    <button>voltar</button>
+                </div>
             </div>
         </Home>
     )
