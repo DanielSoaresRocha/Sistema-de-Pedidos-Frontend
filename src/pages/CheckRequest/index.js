@@ -35,8 +35,8 @@ function CheckRequest () {
                                 <div className='price'>{`$${item.preco * item.qtd}`}</div>
                             </li>
                         ))}
-                        <h1>Total: {`$${cart.getTotalCart()}`}</h1>
                     </ul>
+                    <h1>Total: {`$${cart.getTotalCart()}`}</h1>
                 </section>
                 <section>
                     <h1>Cliente</h1>
@@ -47,6 +47,18 @@ function CheckRequest () {
                     <p>{`${request.getAdressDelivery().logadouro}, ${request.getAdressDelivery().numero}`}</p>
                     <p>{`${request.getAdressDelivery().complemento} CEP ${request.getAdressDelivery().cep}`}</p>
                     <p>{`${request.getAdressDelivery().bairro}, ${request.getAdressDelivery().cidade.estado.nome}`}</p>
+
+                    <h1>Pagamento</h1>
+                    {qtdBillets === 0 ?
+                        <p>Pagamento com cartão</p>
+                        :
+                        (
+                            <>
+                                <p>Pagamento com boleto</p>
+                                <p>{`${qtdBillets} parcelas`}</p>
+                            </>
+                        )
+                    }
                 </section>
             </div>
         </Home>
