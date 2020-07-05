@@ -19,7 +19,7 @@ function SideDrawer (props) {
                         <a href="/categories">Categorias</a>
                     </li>
                     <li>
-                        <a href="/">Carrinho</a>
+                        <a href="/cart">Carrinho</a>
                     </li>
                     <li>
                         <a href="/">Logouth</a>

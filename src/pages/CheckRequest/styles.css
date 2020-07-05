@@ -1,5 +1,4 @@
 .checkContainer{
-    margin: 0px;
     padding: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -115,6 +114,7 @@
         margin-left: 0px;
         padding: 0px;
         margin: 0px;
+        overflow: scroll;
     }
 
     .checkContainer section{
@@ -128,9 +128,5 @@
 
     .checkContainer section ul li .infoItem{
         width: 80px;
-    }
-
-    .checkContainer{
-        overflow: scroll;
     }
 }
