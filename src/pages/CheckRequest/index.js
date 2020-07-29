@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 
 import cart from '../../utils/cart'
@@ -9,7 +9,11 @@ import Home from '../../components/Home';
 
 function CheckRequest () {
     const history = useHistory()
-    const { qtdBillets } = useParams()
+    const { qtdPlots } = useParams()
+
+    useEffect(() => {
+        console.log(`quantidade de parcelas = ${qtdPlots}`)
+    }, [])
 
     return (
         <Home name={'Confira seu pedido'}>
@@ -45,13 +49,13 @@ function CheckRequest () {
                     <p>{`${request.getAdressDelivery().bairro}, ${request.getAdressDelivery().cidade.estado.nome}`}</p>
 
                     <h1>Pagamento</h1>
-                    {qtdBillets === 0 ?
-                        <p>Pagamento com cartão</p>
+                    {qtdPlots === '0' ?
+                        <p>Pagamento com boleto</p>
                         :
                         (
                             <>
-                                <p>Pagamento com boleto</p>
-                                <p>{`${qtdBillets} parcelas`}</p>
+                                <p>Pagamento com cartão</p>
+                                <p>{`${qtdPlots} parcelas`}</p>
                             </>
                         )
                     }

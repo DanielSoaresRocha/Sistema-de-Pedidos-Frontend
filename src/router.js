@@ -25,7 +25,7 @@ export default function Routes () {
                 <Route path="/cart" component={Cart} />
                 <Route path="/get-adress" component={GetAdress} />
                 <Route path="/form-payment" component={FormPayment} />
-                <Route path="/check-request/:qtdBillets" component={CheckRequest} />
+                <Route path="/check-request/:qtdPlots" component={CheckRequest} />
             </Switch>
         </BrowserRouter>
     )
