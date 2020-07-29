@@ -6,13 +6,13 @@ import HeaderNavigate from '../../components/HeaderNavigate';
 
 function FormPayment () {
     const history = useHistory()
-    const [billet, setBillet] = useState(false)
-    let qtdBillet = 0;
+    const [plots, setPlots] = useState(false)
+    let qtdPlots = 0;
 
     function handleFinish (e) {
         e.preventDefault()
 
-        billet === false ? history.push(`/check-request/${0}`) : history.push(`/check-request/${qtdBillet}`)
+        plots === false ? history.push(`/check-request/${0}`) : history.push(`/check-request/${qtdPlots}`)
     }
 
     return (
@@ -23,35 +23,35 @@ function FormPayment () {
                 <form onSubmit={handleFinish}>
                     <div className='selectPayment'>
                         <input
-                            id='cartao'
-                            value='cartao'
-                            name="gender"
-                            type="radio"
-                            onChange={() => setBillet(false)}
-                            required={true}
-                        />
-                        <label
-                            htmlFor='cartao'>
-                            Pagamento com cartão
-                         </label>
-                        <input
                             id='boleto'
                             value='boleto'
                             name="gender"
                             type="radio"
-                            onChange={() => setBillet(true)}
+                            onChange={() => setPlots(false)}
                             required={true}
                         />
                         <label
                             htmlFor='boleto'>
                             Pagamento com boleto
                         </label>
+                        <input
+                            id='cartao'
+                            value='cartao'
+                            name="gender"
+                            type="radio"
+                            onChange={() => setPlots(true)}
+                            required={true}
+                        />
+                        <label
+                            htmlFor='cartao'>
+                            Pagamento com cartão
+                         </label>
                     </div>
                     <div className='numPlots'>
-                        {billet === true ? (
+                        {plots === true ? (
                             <>
-                                <h3>Nº parcelas no boleto</h3>
-                                <select onChange={event => qtdBillet = event.target.value}>
+                                <h3>Nº parcelas no cartão</h3>
+                                <select onChange={event => qtdPlots = event.target.value}>
                                     <option value='1'>1</option>
                                     <option value='2'>2</option>
                                     <option value='3'>3</option>
