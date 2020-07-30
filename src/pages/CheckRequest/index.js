@@ -22,11 +22,11 @@ function CheckRequest () {
         })
 
         const data = {
-            cliente: request.getClient(),
+            cliente: { id: request.getClient().id },
             enderecoDeEntrega: request.getAdressDelivery(),
             pagamento: {
                 numeroDeParcelas: parseInt(qtdPlots),
-                type: 'pagamentoComCartao'
+                '@type': 'pagamentoComCartao'
             },
             itens
         }
@@ -42,6 +42,8 @@ function CheckRequest () {
         }).catch(error => {
             responseError(error)
         })
+
+        console.log(data)
     }
 
     return (

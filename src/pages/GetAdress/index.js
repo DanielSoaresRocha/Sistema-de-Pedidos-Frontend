@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import api from '../../services/api'
 import request from '../../utils/request'
+import responseError from '../../utils/responseError'
 
 import './styles.css'
 import HeaderNavigate from '../../components/HeaderNavigate';
@@ -25,7 +26,7 @@ function GetAdress () {
             setAdresses(response.data.enderecos)
             request.setClient(response.data)
         }).catch(error => {
-            console.log(error)
+            responseError(error)
             history.push('/')
             alert('Sua sessão expirou.')
         })
