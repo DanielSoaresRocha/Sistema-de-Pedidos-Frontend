@@ -13,6 +13,9 @@ const reponseError = (error) => {
         case 401:
             alert('Credenciais inválidas')
             break;
+        case 403:
+            alert('Sua sessão expirou')
+            break;
         case 500:
             alert('Erro interno do servidor')
             break;

@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useParams, useHistory } from 'react-router-dom'
+import api from '../../services/api'
 
 import cart from '../../utils/cart'
 import request from '../../utils/request'
+import responseError from '../../utils/responseError'
 
 import './styles.css'
 import Home from '../../components/Home';
@@ -11,9 +13,36 @@ function CheckRequest () {
     const history = useHistory()
     const { qtdPlots } = useParams()
 
-    useEffect(() => {
-        console.log(`quantidade de parcelas = ${qtdPlots}`)
-    }, [])
+    function handleRequest () {
+        const itens = cart.getCart().map(item => {
+            return {
+                quantidade: item.qtd,
+                produto: { id: item.id }
+            }
+        })
+
+        const data = {
+            cliente: request.getClient(),
+            enderecoDeEntrega: request.getAdressDelivery(),
+            pagamento: {
+                numeroDeParcelas: parseInt(qtdPlots),
+                type: 'pagamentoComCartao'
+            },
+            itens
+        }
+
+        const token = localStorage.getItem('token')
+        api.post('/pedidos', data, {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: token
+            }
+        }).then(response => {
+            console.log(response)
+        }).catch(error => {
+            responseError(error)
+        })
+    }
 
     return (
         <Home name={'Confira seu pedido'}>
@@ -62,7 +91,7 @@ function CheckRequest () {
                 </section>
 
                 <div className='buttons'>
-                    <button>Confirmar pedido</button>
+                    <button onClick={() => handleRequest()}>Confirmar pedido</button>
                     <button onClick={() => history.goBack()}>voltar</button>
                 </div>
             </div>
