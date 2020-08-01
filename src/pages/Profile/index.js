@@ -15,7 +15,12 @@ function Profile () {
         <Home name={'Perfil'}>
             <Camera takePicture={takePicture} changeTakePicture={changeTakePicture} />
 
-            <button onClick={changeTakePicture}>Tirar outra foto</button>
+            {takePicture === true
+                ?
+                <div> </div>
+                :
+                <button class='takePicture' onClick={changeTakePicture}>Tirar outra foto</button>
+            }
         </Home>
     );
 }
