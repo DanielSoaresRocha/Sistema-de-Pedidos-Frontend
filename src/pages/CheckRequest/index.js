@@ -26,7 +26,7 @@ function CheckRequest () {
             enderecoDeEntrega: request.getAdressDelivery(),
             pagamento: {
                 numeroDeParcelas: parseInt(qtdPlots),
-                '@type': 'pagamentoComCartao'
+                '@type': qtdPlots === '0' ? 'pagamentoComBoleto' : 'pagamentoComCartao'
             },
             itens
         }
