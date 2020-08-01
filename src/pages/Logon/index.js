@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom'
 import responseError from '../../utils/responseError'
 
 import api from '../../services/api'
-import Camera from '../../components/Camera'
 
 import './styles.css'
 
@@ -90,7 +89,6 @@ function Logon (props) {
                     </div>
                 </div>
             </form>
-            <Camera />
         </div>
     );
 }
