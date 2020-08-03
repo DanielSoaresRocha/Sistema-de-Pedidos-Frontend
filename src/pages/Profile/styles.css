@@ -7,8 +7,8 @@
     justify-content: center;
 }
 
-.containerProcfile img{
-    width: 250px;
+#imgProcfile{
+width: 250px;
     height: 250px;
     margin-bottom: 20px;
     border-radius: 50%;
@@ -44,12 +44,24 @@
     letter-spacing: 1px;
 }
 
-.takePicture{
+.containerCamera{
+   width: 100%;
+    height: 85vh;
+    background-color: rgba(71, 71, 71, 0.41);
+    position: absolute;
+}
+
+.takePicture, .cancelPicture{
     background-color: blue;
     font-size: 25px;
     padding: 20px;
     color: white;
     cursor: pointer;
     margin-left: 50%;
-    transform: translate(-50%, 0%)
+    transform: translate(-50%, 0%);
+    outline: none;
+}
+
+.cancelPicture{
+    background-color: red;
 }

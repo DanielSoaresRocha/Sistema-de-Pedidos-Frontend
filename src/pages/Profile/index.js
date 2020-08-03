@@ -6,6 +6,7 @@ import Camera from '../../components/Camera'
 
 function Profile () {
     const [takePicture, setTakePicture] = useState(true);
+    const [camera, setCamera] = useState(false);
 
     function changeTakePicture () {
         setTakePicture(!takePicture)
@@ -15,6 +16,7 @@ function Profile () {
         <Home name={'Perfil'}>
             <div className='containerProcfile'>
                 <img
+                    id='imgProcfile'
                     src='https://static.vecteezy.com/system/resources/previews/000/512/610/non_2x/profile-glyph-black-icon-vector.jpg'
                     alt='Perfil'
                 />
@@ -24,20 +26,45 @@ function Profile () {
 
                 <div className='changeProcfile'>
                     <span>Enviar imagem de perfil</span>
-                    <button>Camera</button>
+                    <button onClick={() => setCamera(!camera)}>Camera</button>
                     <button>Arquivo</button>
                 </div>
-            </div>
 
+
+                {camera ? (
+                    <>
+                        <div className='containerCamera'>
+                            <Camera takePicture={takePicture} changeTakePicture={changeTakePicture} />
+
+                            {takePicture === true
+                                ?
+                                <button
+                                    className='cancelPicture'
+                                    onClick={() => setCamera(!camera)}>Cancelar</button>
+                                :
+                                (
+                                    <button
+                                        class='takePicture'
+                                        onClick={changeTakePicture}>Tirar outra foto</button>
+                                )}
+                        </div>
+                    </>
+                ) :
+                    (
+                        <div> </div>
+                    )}
+
+
+            </div>
             {/*
-            <Camera takePicture={takePicture} changeTakePicture={changeTakePicture} />
 
             {takePicture === true
                 ?
                 <div> </div>
                 :
                 <button class='takePicture' onClick={changeTakePicture}>Tirar outra foto</button>
-            }*/}
+            }
+            */}
         </Home>
     );
 }
