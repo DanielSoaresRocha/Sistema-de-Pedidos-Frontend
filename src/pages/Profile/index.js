@@ -4,6 +4,8 @@ import './styles.css'
 import Home from '../../components/Home'
 import Camera from '../../components/Camera'
 
+import request from '../../utils/request'
+
 function Profile () {
     const [takePicture, setTakePicture] = useState(true);
     const [camera, setCamera] = useState(false);
@@ -20,8 +22,8 @@ function Profile () {
                     src='https://static.vecteezy.com/system/resources/previews/000/512/610/non_2x/profile-glyph-black-icon-vector.jpg'
                     alt='Perfil'
                 />
-                <h1>Maria Silva</h1>
-                <span>denk@ufrn.edu.br</span>
+                <h1>{request.getClient().nome}</h1>
+                <span>{localStorage.getItem('email')}</span>
 
 
                 <div className='changeProcfile'>
@@ -44,7 +46,7 @@ function Profile () {
                                 :
                                 (
                                     <button
-                                        class='takePicture'
+                                        className='takePicture'
                                         onClick={changeTakePicture}>Tirar outra foto</button>
                                 )}
                         </div>

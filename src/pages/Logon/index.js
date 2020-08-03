@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import responseError from '../../utils/responseError'
 
 import api from '../../services/api'
+import request from '../../utils/request'
 
 import './styles.css'
 
@@ -56,6 +57,19 @@ function Logon (props) {
             let token = response.headers.authorization
             localStorage.setItem('token', token)
             localStorage.setItem('email', email)
+
+            // setando cliente
+            api.get(`http://localhost:3333/clientes/email`, {
+                params: {
+                    value: email
+                },
+                headers: {
+                    Authorization: token
+                }
+            }).then(response => {
+                request.setClient(response.data)
+            })
+
             history.push('/categories')
         } catch (e) {
             console.log(e.response)
