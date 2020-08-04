@@ -42,17 +42,24 @@ function Profile () {
                         <div className='containerCamera'>
                             <Camera takePicture={takePicture} changeTakePicture={changeTakePicture} />
 
-                            {takePicture === true
-                                ?
-                                <button
-                                    className='cancelPicture'
-                                    onClick={() => setCamera(!camera)}>Cancelar</button>
-                                :
-                                (
+                            <div className='groupButtons'>
+                                {takePicture === true
+                                    ?
                                     <button
-                                        className='takePicture'
-                                        onClick={() => changeTakePicture}>Tirar outra foto</button>
-                                )}
+                                        className='cancelPicture'
+                                        onClick={() => setCamera(!camera)}>Cancelar</button>
+                                    :
+                                    (
+                                        <>
+                                            <button
+                                                className='takePicture'
+                                                onClick={() => changeTakePicture}>Tirar outra foto</button>
+                                            <button
+                                                className='savePicture'
+                                                onClick={() => setCamera(!camera)}>Salvar foto</button>
+                                        </>
+                                    )}
+                            </div>
                         </div>
                     </>
                 ) :
@@ -63,21 +70,23 @@ function Profile () {
                 {photo ?
                     <div className='containerCamera'>
                         <Dropzone onFileUploaded={setSelectedFile} />
-                        <button
-                            className='cancelPicture'
-                            onClick={() => setPhoto(!photo)}>Cancelar</button>
-                        {
-                            selectedFile ?
-                                <button
-                                    className='savePicture'
-                                    onClick={() => {
-                                        setPhoto(!photo)
-                                        setSelectedFile(null)
-                                    }
-                                    }>Salvar</button>
-                                :
-                                <div></div>
-                        }
+                        <div className='groupButtons'>
+                            <button
+                                className='cancelPicture'
+                                onClick={() => setPhoto(!photo)}>Cancelar</button>
+                            {
+                                selectedFile ?
+                                    <button
+                                        className='savePicture'
+                                        onClick={() => {
+                                            setPhoto(!photo)
+                                            setSelectedFile(null)
+                                        }
+                                        }>Salvar</button>
+                                    :
+                                    <div></div>
+                            }
+                        </div>
                     </div>
                     :
                     <div></div>
