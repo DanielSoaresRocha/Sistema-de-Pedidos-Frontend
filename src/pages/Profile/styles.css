@@ -54,7 +54,8 @@ width: 250px;
 .takePicture, .cancelPicture{
     background-color: blue;
     font-size: 25px;
-    padding: 20px;
+    margin-top: 10px;
+    padding: 10px;
     color: white;
     cursor: pointer;
     margin-left: 50%;

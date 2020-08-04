@@ -3,12 +3,14 @@ import React, { useState } from 'react';
 import './styles.css'
 import Home from '../../components/Home'
 import Camera from '../../components/Camera'
+import Dropzone from '../../components/Dropzone'
 
 import request from '../../utils/request'
 
 function Profile () {
     const [takePicture, setTakePicture] = useState(true);
     const [camera, setCamera] = useState(false);
+    const [photo, setPhoto] = useState(false)
 
     function changeTakePicture () {
         setTakePicture(!takePicture)
@@ -29,7 +31,7 @@ function Profile () {
                 <div className='changeProcfile'>
                     <span>Enviar imagem de perfil</span>
                     <button onClick={() => setCamera(!camera)}>Camera</button>
-                    <button>Arquivo</button>
+                    <button onClick={() => setPhoto(!photo)}>Arquivo</button>
                 </div>
 
 
@@ -56,17 +58,17 @@ function Profile () {
                         <div> </div>
                     )}
 
-
+                {photo ?
+                    <div className='containerCamera'>
+                        <Dropzone />
+                        <button
+                            className='cancelPicture'
+                            onClick={() => setPhoto(!photo)}>Cancelar</button>
+                    </div>
+                    :
+                    <div></div>
+                }
             </div>
-            {/*
-
-            {takePicture === true
-                ?
-                <div> </div>
-                :
-                <button class='takePicture' onClick={changeTakePicture}>Tirar outra foto</button>
-            }
-            */}
         </Home>
     );
 }
