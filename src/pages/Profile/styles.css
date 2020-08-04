@@ -51,7 +51,7 @@ width: 250px;
     position: absolute;
 }
 
-.takePicture, .cancelPicture{
+.takePicture, .cancelPicture, .savePicture{
     background-color: blue;
     font-size: 25px;
     margin-top: 10px;
@@ -65,4 +65,8 @@ width: 250px;
 
 .cancelPicture{
     background-color: red;
+}
+
+.savePicture{
+    background-color: green;
 }

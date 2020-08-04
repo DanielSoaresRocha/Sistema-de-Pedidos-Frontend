@@ -11,6 +11,8 @@ function Profile () {
     const [takePicture, setTakePicture] = useState(true);
     const [camera, setCamera] = useState(false);
     const [photo, setPhoto] = useState(false)
+    // eslint-disable-next-line
+    const [selectedFile, setSelectedFile] = useState()
 
     function changeTakePicture () {
         setTakePicture(!takePicture)
@@ -49,7 +51,7 @@ function Profile () {
                                 (
                                     <button
                                         className='takePicture'
-                                        onClick={changeTakePicture}>Tirar outra foto</button>
+                                        onClick={() => changeTakePicture}>Tirar outra foto</button>
                                 )}
                         </div>
                     </>
@@ -60,10 +62,22 @@ function Profile () {
 
                 {photo ?
                     <div className='containerCamera'>
-                        <Dropzone />
+                        <Dropzone onFileUploaded={setSelectedFile} />
                         <button
                             className='cancelPicture'
                             onClick={() => setPhoto(!photo)}>Cancelar</button>
+                        {
+                            selectedFile ?
+                                <button
+                                    className='savePicture'
+                                    onClick={() => {
+                                        setPhoto(!photo)
+                                        setSelectedFile(null)
+                                    }
+                                    }>Salvar</button>
+                                :
+                                <div></div>
+                        }
                     </div>
                     :
                     <div></div>
