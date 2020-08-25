@@ -12,7 +12,7 @@ function CameraComponent ({ takePicture, changeTakePicture }) {
     function handleTakePhotoAnimationDone (dataUri) {
         console.log('takePhoto');
         setDataUri(dataUri);
-        changeTakePicture()
+        changeTakePicture(dataUri)
     }
 
     const isFullscreen = false;

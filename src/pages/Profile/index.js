@@ -12,11 +12,12 @@ function Profile () {
     const [camera, setCamera] = useState(false);
     const [photo, setPhoto] = useState(false)
     // eslint-disable-next-line
-    const [selectedFile, setSelectedFile] = useState()
-
-    function changeTakePicture () {
+    const [selectedFile, setSelectedFile] = useState('https://static.vecteezy.com/system/resources/previews/000/512/610/non_2x/profile-glyph-black-icon-vector.jpg')
+    
+    function changeTakePicture (dataUri) {
         setTakePicture(!takePicture)
         console.log(`tirar outra foto ${takePicture}`)
+        setSelectedFile(dataUri)
     }
 
     return (
@@ -24,7 +25,7 @@ function Profile () {
             <div className='containerProcfile'>
                 <img
                     id='imgProcfile'
-                    src='https://static.vecteezy.com/system/resources/previews/000/512/610/non_2x/profile-glyph-black-icon-vector.jpg'
+                    src={selectedFile}
                     alt='Perfil'
                 />
                 <h1>{request.getClient().nome}</h1>
@@ -81,7 +82,7 @@ function Profile () {
                                         className='savePicture'
                                         onClick={() => {
                                             setPhoto(!photo)
-                                            setSelectedFile(null)
+                                            setSelectedFile(selectedFile)
                                         }
                                         }>Salvar</button>
                                     :
