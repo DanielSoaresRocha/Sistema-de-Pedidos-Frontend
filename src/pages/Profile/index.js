@@ -16,6 +16,7 @@ function Profile () {
 
     function changeTakePicture () {
         setTakePicture(!takePicture)
+        console.log(`tirar outra foto ${takePicture}`)
     }
 
     return (
@@ -53,7 +54,7 @@ function Profile () {
                                         <>
                                             <button
                                                 className='takePicture'
-                                                onClick={() => changeTakePicture}>Tirar outra foto</button>
+                                                onClick={() => changeTakePicture()}>Tirar outra foto</button>
                                             <button
                                                 className='savePicture'
                                                 onClick={() => setCamera(!camera)}>Salvar foto</button>
