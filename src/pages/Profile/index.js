@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './styles.css'
 import Home from '../../components/Home'
@@ -6,19 +6,34 @@ import Camera from '../../components/Camera'
 import Dropzone from '../../components/Dropzone'
 
 import request from '../../utils/request'
+import { photoProfile } from '../../utils/photoProfile'
 
 function Profile () {
     const [takePicture, setTakePicture] = useState(true);
     const [camera, setCamera] = useState(false);
     const [photo, setPhoto] = useState(false)
-    // eslint-disable-next-line
-    const [selectedFile, setSelectedFile] = useState('https://static.vecteezy.com/system/resources/previews/000/512/610/non_2x/profile-glyph-black-icon-vector.jpg')
-    
+
+    const [selectedFile, setSelectedFile] = useState('')
+    const [photoTemp, setPhotoTemp] = useState('')
+
+
     function changeTakePicture (dataUri) {
-        setTakePicture(!takePicture)
-        console.log(`tirar outra foto ${takePicture}`)
-        setSelectedFile(dataUri)
+        setPhotoTemp(dataUri)
+        setTakePicture(false)
     }
+
+    function savePhoto () {
+        setCamera(false)
+        setPhoto(false)
+        setTakePicture(false)
+
+        photoProfile.setPhoto(photoTemp)
+        setSelectedFile(photoProfile.getPhoto())
+    }
+
+    useEffect(() => {
+        setSelectedFile(photoProfile.getPhoto())
+    }, [])
 
     return (
         <Home name={'Perfil'}>
@@ -49,16 +64,16 @@ function Profile () {
                                     ?
                                     <button
                                         className='cancelPicture'
-                                        onClick={() => setCamera(!camera)}>Cancelar</button>
+                                        onClick={() => setCamera(false)}>Cancelar</button>
                                     :
                                     (
                                         <>
                                             <button
                                                 className='takePicture'
-                                                onClick={() => changeTakePicture()}>Tirar outra foto</button>
+                                                onClick={() => setTakePicture(!takePicture)}>Tirar outra foto</button>
                                             <button
                                                 className='savePicture'
-                                                onClick={() => setCamera(!camera)}>Salvar foto</button>
+                                                onClick={() => savePhoto()}>Salvar foto</button>
                                         </>
                                     )}
                             </div>
@@ -71,7 +86,7 @@ function Profile () {
 
                 {photo ?
                     <div className='containerCamera'>
-                        <Dropzone onFileUploaded={setSelectedFile} />
+                        <Dropzone onFileUploaded={changeTakePicture} />
                         <div className='groupButtons'>
                             <button
                                 className='cancelPicture'
@@ -80,10 +95,7 @@ function Profile () {
                                 selectedFile ?
                                     <button
                                         className='savePicture'
-                                        onClick={() => {
-                                            setPhoto(!photo)
-                                            setSelectedFile(selectedFile)
-                                        }
+                                        onClick={() => { savePhoto() }
                                         }>Salvar</button>
                                     :
                                     <div></div>
